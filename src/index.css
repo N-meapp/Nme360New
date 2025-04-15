@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+  .jamjuree{
+    font-family: "Bai Jamjuree", sans-serif;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  }
+
+
+  .poppins{
+    font-family: "Poppins", sans-serif;
+  }
+
+
+  body{
+    scroll-behavior: smooth;
+    height: 100vh;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+
+
