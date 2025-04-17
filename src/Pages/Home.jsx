@@ -5,24 +5,33 @@ import LandingSection from "../Layout/LandingSection";
 import NavBar from "../Layout/NavBar";
 import TextSection from "../Layout/TextSection";
 import AboutUsSectionAlternative from "../Layout/AboutUsSectionAlternative";
-import DescriptionSection from "../Layout/DescriptionSection";
+import DescriptionSectionAlternative from "../Layout/DescriptionSectionAlternative";
+import FutureProjectsAlternative from "../Layout/FutureProjectsAlternative";
+import FutureProjects from "../Layout/FutureProjects";
 
 export default function Home() {
   const [isPointLeft, setIsPointLeft] = useState(true);
   const [leftTranslateX, setleftTranslateX] = useState(0);
   const [rightTranslateX, setRightTranslateX] = useState(0);
+  const [isStartScrolling,setIsStartScrolling] = useState(false);
+  const [startStickyScrolling,setStartStickyScrolling] = useState(false)
 
   return (
     <>
-      {/* Fixed-position section stays outside the scroll container */}
       <NavBar />
+      <FutureProjects startStickyScrolling={startStickyScrolling} />
+
       <AboutUsSection
         setIsPointLeft={setIsPointLeft}
         isPointLeft={isPointLeft}
         leftTranslateX={leftTranslateX}
         rightTranslateX={rightTranslateX}
+        isStartScrolling={isStartScrolling}
+        setStartStickyScrolling={setStartStickyScrolling}
       />
-      {/* Smooth scroll area */}
+
+
+
       <Scroll>
         <LandingSection />
         <TextSection />
@@ -34,7 +43,9 @@ export default function Home() {
           rightTranslateX={rightTranslateX}
           setRightTranslateX={setRightTranslateX}
         />
-        {/* <DescriptionSection /> */}
+        <DescriptionSectionAlternative setIsStartScrolling={setIsStartScrolling} />
+        <FutureProjectsAlternative />
+
       </Scroll>
     </>
   );

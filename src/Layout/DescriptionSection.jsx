@@ -1,10 +1,44 @@
-export default function DescriptionSection(){
+import { useContext, useEffect, useState } from "react";
+import { ScrollContext } from "../main";
+import AboutTextSpan from "../Components/Texts/AboutTextSpan";
 
-    return(
+export default function DescriptionSection({setStartStickyScrolling}) {
+
+    const { scrollHeight, setScrollHeight } = useContext(ScrollContext);
+
+    const [firstQuote, setFirstQuote] = useState(`From innovative hardware to transformative software solutions, N-me 360 powers your digital journey.`.split(""))
+
+
+    useEffect(() => {
+        const divBottomReachedTop = (element) => {
+            if (!element) return false;
+            const rect = element.getBoundingClientRect();
+            return rect.bottom <= 0;
+          };
+
+          const scrollingElement = document.getElementById('scrolling-element')
+          setStartStickyScrolling(divBottomReachedTop(scrollingElement))
+          
+          
+          
+    }, [scrollHeight])
+
+
+
+    return (
         <>
-        <div className="w-full h-screen bg-[#5ac530]">
+            <div id="scrolling-element" className="w-full h-screen fixed bg-[#ffffff] content-center">   
+                <div className="w-[64%] ml-[9%] text-[54px] font-semibold jamjuree " style={{
+        // transform: `translateY(${translateY/5}px)`,
+        transition: "transform 0.01s linear ease",
+      }}>
+                    {firstQuote.map((letter, i) => {
 
-        </div>
+                        return <AboutTextSpan text={letter} id={`about${letter + i}`} isFirst={true} />
+                    }
+                    )}
+                </div>
+            </div>
         </>
     )
 }

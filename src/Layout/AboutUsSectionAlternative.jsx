@@ -20,23 +20,32 @@ export default function AboutUsSectionAlternative({
     // Determine scroll direction
     const isScrollingDown = scrollHeight > prevScroll.current;
     prevScroll.current = scrollHeight;
+    
 
-    if (rect.top <= -300) {
+    if (rect.top <= -600) {
       if (isScrollingDown) {
-        setleftTranslateX(-scrollHeight * 0.3);
-        setRightTranslateX(scrollHeight * 0.3);
+        if(isPointLeft){
+          setleftTranslateX(-scrollHeight * 0.2);
+          setRightTranslateX(scrollHeight * 0.1);
+        }else{
+          setleftTranslateX(-scrollHeight * 0.1);
+          setRightTranslateX(scrollHeight * 0.2);
+        }
       } else {
         // if(leftTranslateX<=0){
-        setleftTranslateX(0);
-        setRightTranslateX(0);
+        if(isPointLeft){
+          setleftTranslateX(scrollHeight * -0.2);
+          setRightTranslateX(-scrollHeight * -0.1);
+        }else{
+          setleftTranslateX(scrollHeight * -0.1);
+          setRightTranslateX(-scrollHeight * -0.2);
+        }
 
         // }
       }
     } else {
       setleftTranslateX(0);
       setRightTranslateX(0);
-
-      console.log("div is not at the top");
     }
   };
 
@@ -45,7 +54,7 @@ export default function AboutUsSectionAlternative({
   }, [scrollHeight]);
 
   return (
-    <div id="about-div" className="w-full h-[500vh] bg-[#ff000000] p-2 -z-10">
+    <div id="about-div" className="w-full h-[400vh] p-2 -z-10 bg-[#ffffff00]">
       <div className="w-full h-full rounded-2xl flex">
         <div
           id="left-div"
