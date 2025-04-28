@@ -16,9 +16,9 @@ export default function DescriptionSectionAlternative({setIsStartScrolling}) {
    const distanceFromTop = divRef.current?.getBoundingClientRect().top;
    const browserHeight = window.innerHeight;
    if(browserHeight>=distanceFromTop){
-        setIsStartScrolling(true)
-   }else{
-    setIsStartScrolling(false)
+    // console.log(distanceFromTop,'disstance');
+    
+        setIsStartScrolling(distanceFromTop)
    }
    
 
@@ -32,7 +32,7 @@ export default function DescriptionSectionAlternative({setIsStartScrolling}) {
         <>
             <div
             ref={divRef}
-                className="w-full h-[200vh] bg-[#ffffff00]">
+                className="w-full h-[300vh] bg-[#ffffff00]">
 
             </div>
         </>

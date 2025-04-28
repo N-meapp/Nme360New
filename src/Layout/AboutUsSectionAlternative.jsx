@@ -50,38 +50,66 @@ export default function AboutUsSectionAlternative({
   };
 
   useEffect(() => {
-    isAtTop();
+    // isAtTop();
+
+
+    const aboutDiv = document.getElementById('about-div')
+    const rect = aboutDiv.getBoundingClientRect();
+    if(rect.top<=0){
+      
+    
+      // console.log(rect.top,'rect..toooopp');
+      
+      setRightTranslateX(Math.abs(rect.top)*0.9)
+      setleftTranslateX(rect.top *0.9)
+
+      // if(isPointLeft){
+      // setleftTranslateX(Math.abs(rect.top)*0.9)
+      // setRightTranslateX(rect.top *0.8)
+      // }else{
+      // }
+      
+    }else{
+      setRightTranslateX(0)
+      setleftTranslateX(0)
+    }
+    
+
+
   }, [scrollHeight]);
 
+;
+  
+
   return (
-    <div id="about-div" className="w-full h-[400vh] p-2 -z-10 bg-[#ffffff00]">
-      <div className="w-full h-full rounded-2xl flex">
+    <>
+      <div id="about-div" className="w-full h-[50vh] md:h-[200vh] p-2 -z-10 bg-[#ffffff00] overflow-hidden">
+      <div className="w-full h-screen md:h-full rounded-2xl md:flex">
         <div
           id="left-div"
           onMouseEnter={() => setIsPointLeft(true)}
           className={`${
-            isPointLeft ? "w-[62%]" : "w-[38%]"
-          } overflow-hidden h-full rounded-2xl transition-[width] duration-500 ease-in-out bg-[#ff000000] relative`}
+            isPointLeft ? "h-[62%] md:w-[62%]" : "h-[38%] md:w-[38%]"
+          } overflow-hidden w-full md:h-full rounded-2xl transition-[width] duration-500 ease-in-out relative`}
           style={{
             transform: `translateX(${leftTranslateX}px)`,
             transition: "transform 0.5s linear, border-radius 0.2s ease",
           }}
         >
-          g
         </div>
         <div
           onMouseEnter={() => setIsPointLeft(false)}
           className={`${
-            !isPointLeft ? "w-[62%]" : "w-[38%]"
-          } overflow-hidden h-full rounded-2xl transition-[width] duration-500 ease-in-out bg-[#00800000] relative`}
+            !isPointLeft ? "h-[62%] md:w-[62%]" : "h-[38%] md:w-[38%]"
+          } overflow-hidden w-full md:h-full rounded-2xl transition-[width] duration-500 ease-in-out relative`}
           style={{
             transform: `translateX(${rightTranslateX}px)`,
             transition: "transform 0.5s linear, border-radius 0.2s ease",
           }}
         >
-          de
         </div>
       </div>
     </div>
+    </>
   );
 }

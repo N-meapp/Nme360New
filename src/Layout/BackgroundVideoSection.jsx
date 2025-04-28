@@ -24,13 +24,6 @@ export default function BackgroundVideoSection({ scaleText, setScaleText, rightT
             
         }
         
-
-        // if(1==Math.floor(scaleText)){
-        //     console.log('scrollll herere');
-        //     setIsStartScrolling(true)
-        // }else{
-        //     setIsStartScrolling(false)
-        // }
         
 
         prevScroll.current = scrollHeight; // update AFTER logic is used 
@@ -38,9 +31,9 @@ export default function BackgroundVideoSection({ scaleText, setScaleText, rightT
     
 
     return (
-        <div className="w-full h-screen absolute mx-auto -z-30 p-2 left-0 pb-5 right-0">
+        <div className="w-full h-screen absolute mx-auto -z-30 p-2 left-0 pb-5 right-0 bg-[#ffffff]">
             <div className="w-full h-full relative">
-                <h3 id="text" className="text-[54px] font-semibold jamjuree absolute top-0 bottom-0 right-0 left-0 w-fit h-fit justify-self-center self-center z-20 text-white" style={{
+                <h3 id="text" className="text-3xl md:text-[54px] font-semibold jamjuree absolute top-0 bottom-0 right-0 left-0 w-fit h-fit justify-self-center self-center z-20 text-center text-white" style={{
                     // transform: `scale(${scaleText})`,
                     opacity:scaleText,
                     transition: "transform 1s ease, opacity 1s ease",

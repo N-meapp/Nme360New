@@ -1,12 +1,14 @@
 import { useContext, useEffect } from "react"
 import { ScrollContext } from "../../main";
 
-export default function AboutTextSpan({ text,id}) {
+export default function AboutTextSpan({ text,id,firstColor,secondColor}) {
     const { scrollHeight, setScrollHeight } = useContext(ScrollContext);
 
     
 
     useEffect(()=>{
+
+        
 
         const element = document.getElementById(id)
         
@@ -15,9 +17,9 @@ export default function AboutTextSpan({ text,id}) {
 
         
             if(distanceFromTop<screenHeight*0.8 ){
-                element.style.color = '#606060'
+                element.style.color = firstColor
             }else{
-                element.style.color = '#BBBBBB'
+                element.style.color = secondColor
             }
         
     },[scrollHeight])

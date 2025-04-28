@@ -15,9 +15,13 @@ export default function TextSection() {
 
     return (
         <>
-            <div className="w-full h-screen text-[54px] font-semibold jamjuree text-[#BBBBBB] bg-[#ffffff] content-center text-center relative pointer-events-none">
+            <div className="w-full h-screen text-[40px] md:text-[54px] font-semibold jamjuree text-[#BBBBBB] bg-[#ffffff] content-center text-center relative pointer-events-none">
 
-                    <div className="w-fit h-fit absolute justify-self-center bottom-1/2 right-0 left-0">
+                    <div className="w-fit h-fit absolute justify-self-center bottom-1/2 right-0 left-0"
+                    style={{
+                        transform: `translateY(${scrollHeight*0.2}px)`,
+                        transition: "transform 0.05s linear, width 0.5s ease",
+                      }}>
                         {firstQuote.map((letter, i) => {
 
                             return <TextSpan text={letter} id={`${letter + i}`} isFirst={true} />
@@ -25,7 +29,11 @@ export default function TextSection() {
                         )}
                     </div>
 
-                    <div className="w-fit h-fit absolute justify-self-center bottom-1/2 right-0 left-0">
+                    <div className="w-fit h-fit absolute justify-self-center bottom-1/2 right-0 left-0"
+                    style={{
+                        transform: `translateY(${scrollHeight*0.2}px)`,
+                        transition: "transform 0.05s linear, width 0.5s ease",
+                      }}>
 
                         {secondQuote.map((letter, i) => {
 
