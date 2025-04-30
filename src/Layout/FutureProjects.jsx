@@ -1,108 +1,3 @@
-// import { useContext, useEffect, useRef, useState } from "react"
-// import { ScrollContext } from "../main";
-
-// export default function FutureProjects({ startStickyScrolling }) {
-//     const { scrollHeight, setScrollHeight } = useContext(ScrollContext);
-//     const [translateY, setTranslateY] = useState(0)
-//     const [tempHeight, setTempHeight] = useState(1)
-//     const divRef = useRef(null);
-//     const [oldScrollRate, setOldScrollRate] = useState(false)
-
-
-//     useEffect(() => {
-//         const divHeight = divRef.current.getBoundingClientRect().height;
-
-//         if (startStickyScrolling) {
-
-//             console.log('starts scrolling');
-//             setTranslateY();
-
-//             let sample =  tempHeight
-//             console.log(sample);
-
-
-
-
-
-
-//             // if(translateY>0 || oldScrollRate>scrollHeight){
-
-//             //     console.log(translateY ,'scrollingg heeeight');
-
-//             //     setTranslateY(divHeight-((scrollHeight * 0 )+ tempHeight));
-
-//             //     if(oldScrollRate<scrollHeight){
-//             //         console.log('DOWNNN');
-
-//                     const temp  = tempHeight
-//                     setTempHeight(temp+5)
-//             //     }else{
-//             //         console.log('UPPP');
-
-//             //         const temp  = tempHeight
-//             //         setTempHeight(temp-5)
-//             //     }
-//             //     setOldScrollRate(scrollHeight)
-//             // }else{
-//             //     console.log('hhhaaa');
-
-//             //     setTranslateY(0)
-//             // }
-//         }
-
-
-//     }, [scrollHeight, startStickyScrolling]);
-
-//     useEffect(() => {
-//         const divHeight = divRef.current.getBoundingClientRect().height;
-
-//         if (!startStickyScrolling) {
-//             setTranslateY(divHeight); // Start pushed down
-//             return;
-//         }
-//     }, [])
-
-
-//     return (
-//         <>
-//             <div className="w-full flex fixed bottom-0 -z-30 h-screen bg-[#BBBBBB] p-3 gap-2">
-//                 <div className="w-full flex-1 h-full bg-[#ffffff] rounded-2xl p-[14px] relative">
-//                     <h3 className="text-[54px] font-semibold jamjuree mt-[30%] text-center">n-me app</h3>
-//                     <hr className="w-[67%] mx-auto border-[#1F1F1F1A] border-[1px] mt-[8%]"></hr>
-//                     <div className="w-[70%] h-auto mx-auto text-center mt-[8%]"><h3 className="text-[16px] jamjuree">n-me app is an innovative platform
-//                         designed to revolutionize how users discover and engage with local businesses.</h3></div>
-//                     <div className="w-[85%] justify-self-center absolute bottom-[14px] right-0 left-0 ">
-//                         <div className="w-fit flex gap-2 mx-auto mb-[12px]">
-//                             <h3 className="text-[10px] jamjuree">1. NME APP</h3>
-//                             <h3 className="text-[10px] jamjuree">1. NME APP</h3>
-//                             <h3 className="text-[10px] jamjuree">1. NME APP</h3>
-//                             <h3 className="text-[10px] jamjuree">1. NME APP</h3>
-
-//                         </div>
-//                         <button className="w-full bg-[#3F37A580] h-[63px] rounded-xl text-[18px] jamjuree text-[white]">Explore n-me app</button>
-//                     </div>
-//                 </div>
-//                 <div id="scrolling-div" className="w-[60%] h-full bg-[green] rounded-2xl relative overflow-hidden">
-//                     <div className="w-full h-full bg-[yellow] sticky rounded-2xl content-center text-center">1</div>
-//                     <div className="w-full h-full bg-[#1baf33] sticky rounded-2xl content-center text-center">2</div>
-//                     <div className="w-full h-full bg-[#8d8d18] sticky rounded-2xl content-center text-center">3</div>
-//                     <div ref={divRef} className="w-full h-full bg-gradient-to-r from-[#05BCF6] to-[#036E90] absolute rounded-2xl content-center text-center" style={{
-//                         transform: `translateY(${translateY}px)`,
-//                         transition: "transform 0.01s linear ease-out",
-//                     }}
-//                     >
-//                         <img src="/public/assets/Images/projects/nmeapp.png" className="w-full h-full object-cover"></img>
-//                     </div>
-
-//                 </div>
-
-//             </div>
-//         </>
-//     )
-// }
-
-
-
 
 import { useContext, useEffect, useRef, useState } from "react"
 import { ScrollContext } from "../main";
@@ -127,7 +22,6 @@ export default function FutureProjects({ startStickyScrolling, projectsScrollHei
             const scrollingDiv = document.getElementById('scrolling-div');
             scrollingDiv.scrollTo({
                 top: Math.abs(projectsScrollHeight),
-                // behavior: 'smooth'
             });
 
             const scrollingDiv2 = document.getElementById('scrolling-div-2');
@@ -155,13 +49,19 @@ export default function FutureProjects({ startStickyScrolling, projectsScrollHei
                     }}
                 >
                     <div className="w-full h-full p-3 bg-[#BBBBBB] gap-2 md:flex hidden"
-
+                    
                     >
-                        <div className="w-full flex-1 h-full bg-[#ffffff] rounded-2xl p-[14px] relative">
-                            {/* Left section */}
+                        <div className="w-full flex-1 h-full bg-[#e0dfdb] rounded-2xl  relative bg-center "
+                         style={{
+                            backgroundImage: "url('/public/assets/Images/projects/background.jpg')",
+                            backgroundSize: 'cover',        // optional, makes image cover the entire div
+                            backgroundRepeat: 'no-repeat'   // optional, prevents tiling
+                          }}
+                        >
+                            <div className="w-full h-full bg-[#ffffff9a] rounded-2xl p-[14px]">
                             <h3 className="text-[54px] font-semibold jamjuree mt-[30%] text-center">{currentProject}</h3>
                             <hr className="w-[67%] mx-auto border-[#1F1F1F1A] border-[1px] mt-[8%]" />
-                            <div className="w-[70%] h-auto mx-auto text-center mt-[8%]">
+                            <div className="w-[70%] h-auto mx-auto text-center mt-[8%] bg-white/30 backdrop-blur-md p-4 rounded-2xl">
                                 <h3 className="text-[16px] jamjuree">
                                     n-me app is an innovative platform designed to revolutionize how users discover and engage with local businesses.
                                 </h3>
@@ -173,10 +73,13 @@ export default function FutureProjects({ startStickyScrolling, projectsScrollHei
                                     <h3 className="text-[10px] jamjuree">3. TICKETTO</h3>
                                     {/* <h3 className="text-[10px] jamjuree">4. NME APP</h3> */}
                                 </div>
-                                <button className="w-full bg-[#3F37A580] h-[63px] rounded-xl text-[18px] jamjuree text-white">
+                                <button className="w-full bg-[#3f37a5] h-[63px] rounded-xl text-[18px] jamjuree text-white">
                                     Explore {currentProject}
                                 </button>
                             </div>
+                            </div>
+                            {/* Left section */}
+                            
                         </div>
 
                         {/* Right scrolling div */}

@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <>
-            <div className="w-full h-full md:h-screen bg-[#ffffff] fixed top-0 -z-50 p-4 md:p-[65px] content-end">
+            <div className="w-full h-full md:h-screen bg-[#e6e5e5] fixed top-0 -z-50 p-4 md:p-[65px] content-end">
                 <div className=" md:w-full h-[90%] md:h-3/4 md:flex justify-between gap-5 dm-sans">
                     <div className="w-full">
                         <img className="w-14 md:w-[85px]" src="/public/assets/Images/logo/logo.png"></img>

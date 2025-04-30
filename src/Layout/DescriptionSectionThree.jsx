@@ -16,7 +16,7 @@ export default function DescriptionSectionThree({setConnectWithScrollHeight,conn
                 transition: "transform 0.01s linear ease",
               }}>
                 {/* <DescriptionSection /> */}
-                <div className="text-[54px] w-[64%] mx-auto jamjuree font-bold"
+                <div className="md:text-[80px] text-4xl md:leading-[90px] w-[64%] mx-auto jamjuree font-bold"
                 
                 style={{
                     transform: `translateY(-${connectWithScrollHeight*-0.2}px)`,

@@ -11,6 +11,9 @@ export default function ConnectWithUsSectionAlternative({ setConnectWithScrollHe
       const rect = myDivRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
+      console.log(offsetY,'offsety');
+      
+
       // For ConnectWithUs scrollHeight prop
       if (rect.top < windowHeight) {
         setConnectWithScrollHeight(rect.top);
@@ -35,21 +38,35 @@ export default function ConnectWithUsSectionAlternative({ setConnectWithScrollHe
   return (
     <div ref={myDivRef} className="w-full h-screen bg-[#ffffff] p-[14px]">
       <div
-        className="w-full h-full rounded-2xl bg-center bg-no-repeat bg-cover text-center content-center"
+        className="w-full h-full rounded-2xl bg-center bg-no-repeat bg-cover text-center content-center relative"
         style={{
-          backgroundImage: "url('/assets/Images/projects/contactus.png')",
+          backgroundImage: "url('/assets/Images/header/connectbg.png')",
           transition: "border-radius 0.2s ease",
         }}
       >
-        <h3
-          className="text-3xl md:text-[54px] jamjuree font-bold text-white"
-          style={{
-            transform: `translateY(${-offsetY * -0.2}px)`,
-            transition: "transform 0.05s ease",
-          }}
+          <img className="w-full h-full absolute left-0 right-0 bottom-0 object-contain z-40"  src="/public/assets/Images/header/connectwithus.png"></img>
+        <div
+          className="text-3xl md:text-[80px] md:leading-[90px] jamjuree font-bold text-white flex gap-2 md:gap-5 mx-auto w-fit" 
         >
-          Connect with Us
-        </h3>
+        <h3
+        style={{
+          transform: `translateY(${-offsetY * -0.2}px)`,
+          transition: "transform 0.05s ease",
+        }}
+        >Connect </h3>
+        <h3
+        style={{
+          transform: `translateY(${-offsetY * -0.3}px)`,
+          transition: "transform 0.05s ease",
+        }}
+        >with </h3>
+        <h3
+        style={{
+          transform: `translateY(${-offsetY * -0.4}px)`,
+          transition: "transform 0.05s ease",
+        }}
+        > Us</h3>
+        </div>
       </div>
     </div>
   );

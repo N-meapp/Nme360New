@@ -6,6 +6,9 @@
 
   .jamjuree{
     font-family: "Bai Jamjuree", sans-serif;
+    /* font-family: "Young Serif", serif; */
+    /* font-family: "Poppins", sans-serif; */
+
     /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
   }
 
@@ -36,5 +39,15 @@
   @keyframes pulse {
     from { transform: scale(0.9); }
     to { transform: scale(1); }
+  }
+  
+
+
+  .spin {
+    animation: spin 5s infinite linear;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
   

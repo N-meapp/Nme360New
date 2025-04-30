@@ -15,7 +15,7 @@ export default function SecondTextSection({descriptionScrollHeight}) {
 
     return (
         <>
-            <div className="w-full h-screen text-3xl md:text-[54px] md:leading-relaxed font-semibold jamjuree text-[#606060] bg-[#BBBBBB] content-center text-center relative pointer-events-none">
+            <div className="w-full h-screen text-3xl md:text-[80px] md:leading-[90px] font-semibold jamjuree text-[#606060] bg-[#BBBBBB] content-center text-center relative pointer-events-none">
 
                     <div className="w-fit h-fit absolute justify-self-center bottom-1/2 right-0 left-0"
                     

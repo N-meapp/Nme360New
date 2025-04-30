@@ -16,7 +16,7 @@ export default function DescriptionSectionAlternative({setIsStartScrolling}) {
    const distanceFromTop = divRef.current?.getBoundingClientRect().top;
    const browserHeight = window.innerHeight;
    if(browserHeight>=distanceFromTop){
-    // console.log(distanceFromTop,'disstance');
+    console.log(distanceFromTop,'disstance');
     
         setIsStartScrolling(distanceFromTop)
    }

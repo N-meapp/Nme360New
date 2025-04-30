@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Scroll from "../Components/Scrollbar/SmoothScroll";
 import AboutUsSection from "../Layout/AboutUsSection";
 import LandingSection from "../Layout/LandingSection";
@@ -15,6 +15,7 @@ import DescriptionSectionThree from "../Layout/DescriptionSectionThree";
 import ConnectWithUsSectionAlternative from "../Layout/ConnectWithUsSectionAlternative";
 import FooterAlternative from "../Layout/FooterAlternative";
 import Footer from "../Layout/Footer";
+import Loader from "../Layout/Loader";
 
 export default function Home() {
   const [isPointLeft, setIsPointLeft] = useState(true);
@@ -31,12 +32,17 @@ export default function Home() {
 
 
 
+    useEffect(()=>{
+           window.scrollTo({ top: 0});
+   
+       },[])
+
 
   return (
     <>
-      <NavBar />
 
-      <Scroll>
+
+      
         <LandingSection />
        <TextSection />
         <AboutUsSectionAlternative
@@ -64,10 +70,9 @@ export default function Home() {
         <DescriptionSectionThreeAlternative setDescriptionScrollHeight={setThridDescriptionScrollHeight} />
         <DescriptionSectionThree connectWithScrollHeight={connectWithScrollHeight} setConnectWithScrollHeight={setConnectWithScrollHeight} />
         <ConnectWithUsSectionAlternative setConnectWithScrollHeight={setConnectWithScrollHeight} />
-        <Footer />
-        <FooterAlternative />
+        
 
-      </Scroll>
+      {/* </Scroll> */}
     </>
   );
 }
