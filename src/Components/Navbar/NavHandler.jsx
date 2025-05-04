@@ -14,6 +14,15 @@ export default function NavHandler() {
     else if(value=='Services'){
       navigate('/services')
 
+    }else if(value=='Careers'){
+      navigate('/careers')
+
+    }else if(value=='Blogs'){
+      navigate('/blogs')
+
+    }else if(value=='Contact Us'){
+      navigate('/contactus')
+
     } else {
       navigate('/')
     }

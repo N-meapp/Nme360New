@@ -14,7 +14,7 @@ export default function AboutUs() {
     return (
         <>
 
-            <div className="w-full h-auto pt-20 bg-white pb-20 jamjuree">
+        <div className="w-full h-auto pt-28 md:pt-20 bg-white pb-10 md:pb-20 jamjuree">
 
                 <div className="text-center md:py-12 px-12 pb-0">
                     <p className="text-black text-[24px]">
@@ -23,9 +23,8 @@ export default function AboutUs() {
                             The Why
                         </a>
                     </p>
-                    <h2
-                        className="text-6xl font-semibold text-black mt-8 mb-8">
-                        We are N-me 360
+                    <h2 className="text-4xl md:text-6xl font-semibold text-black md:mt-8 mt-4 mb-4 md:mb-8">
+                    We are N-me 360
                     </h2>
                     <p className="text-black max-w-[901px] mx-auto">
                         N-me 360 is the mother company bridging the gap between hardware and software, simplifying technology for businesses and individuals worldwide. We believe in creating value through innovation.
@@ -39,7 +38,7 @@ export default function AboutUs() {
                         }}>
                     </img>
                 </div >
-                <div className="flex items-center justify-center mt-32 para px-4 md:px-8 lg:px-16">
+                <div className="flex items-center justify-center pt-14 md:mt-32 para px-4 md:px-8 lg:px-16">
                     <div className="bg-[#F24D400A] p-6 md:p-12 lg:p-20 rounded-lg w-full max-w-[1240px]">
                         <h1 className="text-xl md:text-2xl lg:text-[28px] font-semibold text-black mb-4 leading-snug md:leading-[42px] max-w-full md:max-w-[1030px]">
                             Kickstart your journey with N-Me Smartech’s custom IT solutions streamlining workflows and highlighting the technology driving your business

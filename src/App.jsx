@@ -8,8 +8,25 @@ import Scroll from "./Components/Scrollbar/SmoothScroll";
 import Footer from "./Layout/Footer";
 import FooterAlternative from "./Layout/FooterAlternative";
 import Services from "./Pages/Services";
+import Careers from "./Pages/Careers";
+import ContactUs from "./Pages/ContactUs";
+import Blogs from "./Pages/Blogs";
+import { useEffect, useState } from "react";
+import Admin from "./Pages/Admin";
 
 export default function App() {
+
+  const [isAdmin,setIsAdmin] = useState(false)
+
+  useEffect(()=>{
+    const location = window.location.href
+    if(location.includes('admin')){
+      setIsAdmin(true)
+    }else{
+      false
+    }
+  })
+
   return (
     <>
      <AnimatedCursor
@@ -24,17 +41,27 @@ export default function App() {
 {/* <Loader /> */}
 <Scroll>
       <BrowserRouter>
-<NavBar />
+      {!isAdmin?
+        <NavBar />
+        :null
+      }
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/careers" element={<Services />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/contactus" element={<ContactUs /> } />
+          <Route path="/blogs" element={<Blogs /> } />
+          <Route path="/admin" element={<Admin /> } />
+
+
 
           <Route path="*" element={<Home />} />
         </Routes>
-      <Footer />
-        <FooterAlternative />
+        {!isAdmin?
+          <Footer />
+          :null
+        }        <FooterAlternative />
       </BrowserRouter>
       </Scroll>
 

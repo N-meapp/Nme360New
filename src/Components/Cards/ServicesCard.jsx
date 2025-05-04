@@ -3,7 +3,7 @@ export default function ServicesCard({ service }) {
 
     return (
         <>
-            <div className={`md:w-[295px] w-52 md:h-[391px] flex-shrink-0 rounded-lg p-[30px] flex-col flex justify-between`}
+            <div className={`md:w-[295px] w-[95%] md:h-[391px] flex-shrink-0 rounded-lg p-[30px] flex-col flex justify-between`}
                 style={{ backgroundColor: service.cardColor }}
 
             >

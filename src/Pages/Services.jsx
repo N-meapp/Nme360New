@@ -12,17 +12,17 @@ export default function Services() {
 
     return (
         <>
-            <div className="bg-white jamjuree">
+        <div className="w-full h-auto pt-28 md:pt-20 bg-white pb-10 md:pb-20 jamjuree">
 
 
-                <div className="bg-white pt-20 px-4">
+                <div className="bg-white px-4">
                     <div className="max-w-full mx-auto text-center">
                         <div className="text-center md:py-12 px-12 pb-0">
                             <p className="text-black text-[24px]">
                                 Our Services: <a className="text-[#3A329D]" href="#">The How</a>
                             </p>
-                            <h2
-                                className="text-6xl font-semibold text-black mt-8 mb-8">
+                            <h2 className="text-4xl md:text-6xl font-semibold text-black md:mt-8 mt-4 mb-4 md:mb-8">
+
                                 Taking digital experiences to new heights
                             </h2>
                             <p className="text-black max-w-[901px] mx-auto">
@@ -30,7 +30,7 @@ export default function Services() {
                             </p>
                         </div>
 
-                        <div className="w-[87%] h-fit flex flex-wrap gap-[20px] mx-auto justify-center"
+                        <div className="w-[87%] h-fit flex flex-wrap gap-[20px] mx-auto justify-center mt-10 md:mt-0"
                             style={{
                                 transform: `translateY(${translateY}px)`,
                                 transition: "transform 0.05s linear ease",
@@ -110,12 +110,12 @@ export default function Services() {
                     </div> */}
                     </div>
                 </div>
-                <div className="w-[87%] mx-auto h-fit py-[160px]">
+                <div className="w-[80%] md:w-[87%] mx-auto h-fit pt-36 md:py-[160px]">
 
-                    <div className="w-full flex justify-between items-center mb-[160px]">
+                    <div className="w-full md:flex justify-between items-center mb-10 md:mb-[160px]">
 
 
-                        <div className="w-[62%] h-fit pt-[68px]">
+                        <div className="md:w-[62%] w-full h-fit pt-[68px]">
                             <h1 className="text-3xl sm:text-4xl lg:text-[54px] font-semibold p-5 mb-4 ">Do more with us</h1>
                             <p className="text-black text-sm sm:text-base leading-6  sm:leading-7  text-justify service-text">
                                 At NME 360, we provide complete IT solutions to help businesses thrive in the digital era. From custom
@@ -130,11 +130,11 @@ export default function Services() {
                         </div>
 
                     </div>
-                    <div className="w-full flex justify-between items-center">
+                    <div className="w-full md:flex justify-between items-center">
                         <div className="">
                             <img className="max-w-full h-auto " src="/public/assets/Images/services/service2.png" alt="Image"></img>
                         </div>
-                        <div className="w-[62%] h-fit pt-[68px]">
+                        <div className="md:w-[62%] w-full h-fit md:pt-[68px]">
                             <h1 className="text-3xl sm:text-4xl lg:text-[54px] font-semibold p-5 mb-4 leading-[48px] sm:leading-[58px] lg:leading-[70.2px]">
                                 Why we or what makes us unique
                             </h1>
