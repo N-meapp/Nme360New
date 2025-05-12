@@ -17,7 +17,7 @@ export default function LoginPage(){
         }
         
 
-        axios.post('http://localhost:3000/api/login',data).then((result)=>{
+        axios.post('https://nme360.com/api/login',data).then((result)=>{
             if(result.data.status){
                 Swal.fire({
                     position: "center",

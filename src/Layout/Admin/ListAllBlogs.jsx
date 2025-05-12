@@ -12,7 +12,7 @@ export default function ListAllBlogs(){
 
     try {
 
-      axios.get('http://localhost:3000/api/blog').then((result)=>{
+      axios.get('https://nme360.com/api/blog').then((result)=>{
         setBlogs(result.data.res)
         
       })

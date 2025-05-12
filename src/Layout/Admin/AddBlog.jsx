@@ -29,7 +29,7 @@ export default function AddBlog() {
         const imageUrl = res.data.url
         data.image = imageUrl
 
-        await axios.post('http://localhost:3000/api/blog', data).then((result) => {
+        await axios.post('https://nme360.com/api/blog', data).then((result) => {
           if (result.data.status) {
 
             Swal.fire({

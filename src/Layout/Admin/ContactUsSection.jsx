@@ -26,7 +26,7 @@ export default function ContactUsSection() {
 
 
         try {
-            const response = await axios.post('http://localhost:3000/api/enquiry', data);
+            const response = await axios.post('https://nme360.com/api/enquiry', data);
 
             console.log(response);
 

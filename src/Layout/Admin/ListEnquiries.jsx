@@ -7,7 +7,7 @@ export default function ListEnquiries(){
 
     useEffect(()=>{
          try {
-             axios.get('http://localhost:3000/api/enquiry').then((result)=>{
+             axios.get('https://nme360.com/api/enquiry').then((result)=>{
                   setEnquiries(result.data.res)
                   
                 })

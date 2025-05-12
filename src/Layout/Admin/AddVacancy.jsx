@@ -16,7 +16,7 @@ export default function AddVacancy() {
 
             const data = { position: position, skills: skills, experience:experience }
 
-                await axios.post('http://localhost:3000/api/career', data).then((result) => {
+                await axios.post('https://nme360.com/api/career', data).then((result) => {
                     if (result.data.status) {
 
                         Swal.fire({

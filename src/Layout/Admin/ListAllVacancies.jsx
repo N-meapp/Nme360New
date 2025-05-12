@@ -12,7 +12,7 @@ export default function ListAllVacancies(){
 
         useEffect(()=>{
             try {
-                axios.get('http://localhost:3000/api/career').then((result)=>{
+                axios.get('https://nme360.com/api/career').then((result)=>{
                   setVacancies(result.data.res)
                 })
                 

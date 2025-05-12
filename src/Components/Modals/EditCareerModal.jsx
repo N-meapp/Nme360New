@@ -16,7 +16,7 @@ export default function EditCareerModal({ isEditClicked, setIsEditClicked, caree
 
         const data = { position: position, skills: skills, experience: experience, id: career._id }
 
-        await axios.patch('http://localhost:3000/api/career', data).then((result) => {
+        await axios.patch('https://nme360.com/api/career', data).then((result) => {
             if (result.data.status) {
 
                 Swal.fire({

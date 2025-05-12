@@ -27,7 +27,7 @@ export default function EditModal({ isEditClicked, setIsEditClicked, blog,setIsM
                 if (res?.data?.url) {
                     const data = { title: title, description: description, date: date, image: res.data.url, id: blog._id }
     
-                    await axios.patch('http://localhost:3000/api/blog', data).then((result) => { 
+                    await axios.patch('https://nme360.com/api/blog', data).then((result) => { 
                         if (result.data.status) {
             
                             Swal.fire({
@@ -81,7 +81,7 @@ export default function EditModal({ isEditClicked, setIsEditClicked, blog,setIsM
 
             const data = { title: title, description: description, date: date, image: image, id: blog._id }
     
-            await axios.patch('http://localhost:3000/api/blog', data).then((result) => { 
+            await axios.patch('https://nme360.com/api/blog', data).then((result) => { 
                 if (result.data.status) {
     
                     Swal.fire({

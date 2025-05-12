@@ -32,8 +32,11 @@ const handleDelete =async () =>{
     confirmButtonText: "Yes, delete it!"
   }).then(async (result) => {
     if (result.isConfirmed) {
+
+
       
-      await axios.delete('http://localhost:3000/api/blog',{
+      // http://localhost:3000/
+      await axios.delete('https://nme360.com/api/blog',{
         params: {
           id: blog._id
         }

@@ -23,7 +23,7 @@ export default function ApplyForJob() {
   formData.append('resume', resume); // resume should be a File object
 
   try {
-    const response = await axios.post('http://localhost:3000/api/send-mail', formData, {
+    const response = await axios.post('https://nme360.com/api/send-mail', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
