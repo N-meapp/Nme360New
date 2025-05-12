@@ -48,7 +48,7 @@ export default function LoginPage(){
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             alt="Your Company"
-            src="/public/assets/Images/logo/logo.png"
+            src="/assets/Images/logo/logo.png"
             className="mx-auto h-24 w-auto"
           />
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">

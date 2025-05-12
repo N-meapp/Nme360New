@@ -126,13 +126,13 @@ export default function Services() {
                             </p>
                         </div>
                         <div className="">
-                            <img className="max-w-full h-auto " src="/public/assets/Images/services/service1.png" alt="Image"></img>
+                            <img className="max-w-full h-auto " src="/assets/Images/services/service1.png" alt="Image"></img>
                         </div>
 
                     </div>
                     <div className="w-full md:flex justify-between items-center">
                         <div className="">
-                            <img className="max-w-full h-auto " src="/public/assets/Images/services/service2.png" alt="Image"></img>
+                            <img className="max-w-full h-auto " src="/assets/Images/services/service2.png" alt="Image"></img>
                         </div>
                         <div className="md:w-[62%] w-full h-fit md:pt-[68px]">
                             <h1 className="text-3xl sm:text-4xl lg:text-[54px] font-semibold p-5 mb-4 leading-[48px] sm:leading-[58px] lg:leading-[70.2px]">

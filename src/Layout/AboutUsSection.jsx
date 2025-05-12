@@ -110,7 +110,7 @@ export default function AboutUsSection({
                 }}>
               <img
                 className={`w-[99vw] max-w-none top-0 absolute h-screen -z-20 object-cover left-0`}
-                src="/public/assets/Images/header/us4.jpg"
+                src="/assets/Images/header/us4.jpg"
               ></img>
               <h3   className="text-[54px] text-[white] font-semibold jamjuree">
                 About Us
@@ -131,7 +131,7 @@ export default function AboutUsSection({
             >
               <img
                 className={`w-[99vw] max-w-none top-0 absolute h-screen -z-30 object-cover right-0`}
-                src="/public/assets/Images/header/us4.jpg"
+                src="/assets/Images/header/us4.jpg"
               ></img>
               <div className="w-full h-full bg-[#00000080] text-center content-center">
                 <h3 className="text-[54px] text-[white] font-semibold jamjuree">
@@ -167,7 +167,7 @@ export default function AboutUsSection({
                 }}>
               <img
                 className={`w-[99vw] max-w-none top-0 absolute h-screen -z-20 object-cover`}
-                src="/public/assets/Images/header/us4.jpg"
+                src="/assets/Images/header/us4.jpg"
               ></img>
               <h3 className="text-3xl md:text-[54px] text-[white] font-semibold jamjuree">
                 About Us
@@ -183,7 +183,7 @@ export default function AboutUsSection({
             >
               <img
                 className={`w-[99vw] max-w-none -bottom-5 absolute h-screen -z-30 object-cover`}
-                src="/public/assets/Images/header/us4.jpg"
+                src="/assets/Images/header/us4.jpg"
               ></img>
               <div className="w-full h-full bg-[#00000080] text-center content-center">
                 <h3 className="text-3xl md:text-[54px] text-[white] font-semibold jamjuree">

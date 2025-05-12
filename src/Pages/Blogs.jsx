@@ -51,7 +51,7 @@ export default function Blogs() {
           </p>
         </div>
         <div className="h-[35rem] w-[90%] md:max-w-[901px] mt-14 rounded-2xl mx-auto relative ">
-        <img src="/public/assets/Images/blogs/seo.jpg" className="w-full h-full object-cover object-center rounded-lg"></img>
+        <img src="/assets/Images/blogs/seo.jpg" className="w-full h-full object-cover object-center rounded-lg"></img>
         <div className="w-fit absolute h-fit bottom-6 left-6">
         <p class="text-sm text-white">February 8, 2025</p>
             <h3 class="text-lg font-bold text-white">The Importance of SEO: How to Rank Higher on Google / Digital marketing services </h3>

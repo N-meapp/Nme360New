@@ -31,7 +31,7 @@ export default function AboutUs() {
                     </p>
                 </div>
                 <div className="flex justify-center mt-8 ml-6 mr-6">
-                    <img alt="Three happy people, one making a peace sign, one holding a book, and one holding a tablet, all smiling and standing together " className="rounded-lg " src="/public/assets/Images/About/about.png"
+                    <img alt="Three happy people, one making a peace sign, one holding a book, and one holding a tablet, all smiling and standing together " className="rounded-lg " src="/assets/Images/About/about.png"
                         style={{
                             transform: `translateY(${translateY}px)`,
                             transition: "transform 0.05s linear ease",

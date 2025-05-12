@@ -47,7 +47,7 @@ export default function BackgroundVideoSection({ scaleText, setScaleText, rightT
                     Together we built the future
                 </h3>
                 <div className="w-[inherit] h-full bg-[#0000004f] absolute z-10 rounded-2xl"></div>
-                <video className="w-full object-cover h-full rounded-2xl" src="/public/assets/Videos/digitalworld.mp4" autoPlay muted loop></video>
+                <video className="w-full object-cover h-full rounded-2xl" src="/assets/Videos/digitalworld.mp4" autoPlay muted loop></video>
             </div>
         </div>
     );

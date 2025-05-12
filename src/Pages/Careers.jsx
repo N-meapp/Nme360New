@@ -58,7 +58,7 @@ export default function Careers() {
                             transform: `translateX(${-translateX}px)`,
                             transition: "transform 0.05s linear ease",
                         }}>
-                        <img src="/public/assets/Images/Careers/careers.png" className="w-[350px] lg:w-[500px] rounded-lg"></img>
+                        <img src="/assets/Images/Careers/careers.png" className="w-[350px] lg:w-[500px] rounded-lg"></img>
                     </div>
 
 
@@ -71,28 +71,28 @@ export default function Careers() {
                     >
                         <div className="flex items-center gap-4">
                             <div className="w-[60px] h-[60px] flex items-center justify-center bg-[#fddab7] rounded-full">
-                                <img src="/public/assets/Images/Careers/innovative.png" alt="Innovative Work Environment Icon" className="w-[30px] h-[30px]"></img>
+                                <img src="/assets/Images/Careers/innovative.png" alt="Innovative Work Environment Icon" className="w-[30px] h-[30px]"></img>
                             </div>
                             <p className="text-lg sm:text-2xl font-semibold">Innovative Work Environment</p>
                         </div>
 
                         <div className="flex items-center gap-4">
                             <div className="w-[60px] h-[60px] flex items-center justify-center bg-[#d1ff8d] rounded-full">
-                                <img src="/public/assets/Images/Careers/careergrowth.png" alt="Career Growth & Learning Icon" className="w-[30px] h-[30px]"></img>
+                                <img src="/assets/Images/Careers/careergrowth.png" alt="Career Growth & Learning Icon" className="w-[30px] h-[30px]"></img>
                             </div>
                             <p className="text-lg sm:text-2xl font-semibold">Career Growth & Learning</p>
                         </div>
 
                         <div className="flex items-center gap-4">
                             <div className="w-[60px] h-[60px] flex items-center justify-center bg-[#aee4f7] rounded-full">
-                                <img src="/public/assets/Images/Careers/teamculture.png" alt="Collaborative Team Culture Icon" className="w-[30px] h-[30px]"></img>
+                                <img src="/assets/Images/Careers/teamculture.png" alt="Collaborative Team Culture Icon" className="w-[30px] h-[30px]"></img>
                             </div>
                             <p className="text-lg sm:text-2xl font-semibold">Collaborative Team Culture</p>
                         </div>
 
                         <div className="flex items-center gap-4">
                             <div className="w-[60px] h-[60px] flex items-center justify-center bg-[#cafffb] rounded-full">
-                                <img src="/public/assets/Images/Careers/it infrasture.png" alt="Reliable IT Infrastructure Icon" className="w-[30px] h-[30px]"></img>
+                                <img src="/assets/Images/Careers/it infrasture.png" alt="Reliable IT Infrastructure Icon" className="w-[30px] h-[30px]"></img>
                             </div>
                             <p className="text-lg sm:text-2xl font-semibold">Reliable IT Infrastructure</p>
                         </div>

@@ -62,7 +62,7 @@ export default function ConnectWithUsSectionAlternative({ setConnectWithScrollHe
           transition: "border-radius 0.05s ease",
         }}
       >
-        <img className="w-full absolute left-0 right-0 bottom-0 object-contain z-40" src="/public/assets/Images/header/connectwithus.png"></img>
+        <img className="w-full absolute left-0 right-0 bottom-0 object-contain z-40" src="/assets/Images/header/connectwithus.png"></img>
         <div
           className="text-3xl md:text-[80px] md:leading-[90px] jamjuree font-bold text-white flex gap-2 md:gap-5 mx-auto w-fit"
         >
