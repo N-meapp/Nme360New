@@ -18,72 +18,72 @@ import LoginPage from "./Pages/LoginPage";
 
 export default function App() {
 
-  const [isAdmin,setIsAdmin] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
   const admin = useSelector((state) => state.admin.admin);
 
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     const location = window.location.href
-    if(location.includes('admin')){
+    if (location.includes('admin')) {
       setIsAdmin(true)
-    }else{
+    } else {
       false
     }
   })
 
   return (
     <>
-  
-    {isAdmin?
-   <>
-   <BrowserRouter>
-     
-   <Routes>
 
-         <Route path="/admin" element={admin?<Admin /> :<LoginPage />} />
-   </Routes>
+      {isAdmin ?
+        <>
+          <BrowserRouter>
 
-     </BrowserRouter>
-   </>
-    :
-    <>
+            <Routes>
 
-    <AnimatedCursor
- innerSize={12}
- outerSize={40}
- color='0,0,0'
- outerAlpha={0.5}
- innerScale={1}
- outerScale={2}
- clickables={['a', 'button', '.link']}
-/>
-{/* <Loader /> */}
-<Scroll>
-     <BrowserRouter>
-       <NavBar />
-     
-       <Routes>
-         <Route path="/" element={<Home />} />
-         <Route path="/about" element={<AboutUs />} />
-         <Route path="/services" element={<Services />} />
-         <Route path="/careers" element={<Careers />} />
-         <Route path="/contactus" element={<ContactUs /> } />
-         <Route path="/blogs" element={<Blogs /> } />
+              <Route path="/admin" element={admin ? <Admin /> : <LoginPage />} />
+            </Routes>
+
+          </BrowserRouter>
+        </>
+        :
+        <>
+
+          <AnimatedCursor
+            innerSize={12}
+            outerSize={40}
+            color='0,0,0'
+            outerAlpha={0.5}
+            innerScale={1}
+            outerScale={2}
+            clickables={['a', 'button', '.link']}
+          />
+          {/* <Loader /> */}
+          <Scroll>
+            <BrowserRouter>
+              <NavBar />
+
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/contactus" element={<ContactUs />} />
+                <Route path="/blogs" element={<Blogs />} />
 
 
 
-         <Route path="*" element={<Home />} />
-       </Routes>
-         <Footer />
-      <FooterAlternative />
-     </BrowserRouter>
-     </Scroll>
+                <Route path="*" element={<Home />} />
+              </Routes>
+              <Footer />
+              <FooterAlternative />
+            </BrowserRouter>
+          </Scroll>
 
-   </>
-    
-    }
+        </>
+
+      }
 
     </>
-    
+
   )
 }

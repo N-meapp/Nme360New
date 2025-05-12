@@ -56,11 +56,14 @@ const Scroll = ({ children }) => {
   useEffect(() => {
     if (!scrollRef.current) return;
 
-    const lenis = new Lenis({
-      duration: 1.2,
-      smooth: true,
-      gestureOrientation: "vertical", // you can tweak if needed
-    });
+   const lenis = new Lenis({
+  duration: 1.2,
+  smooth: true,
+  smoothTouch: true,      
+  touchMultiplier: 1.5,
+  gestureOrientation: "vertical",
+});
+
 
     function raf(time) {
       lenis.raf(time);
