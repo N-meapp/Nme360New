@@ -6,6 +6,8 @@ export default function BackgroundVideoSection({ scaleText, setScaleText, rightT
     const { scrollHeight } = useContext(ScrollContext);
     const [opacity, setOpacity] = useState(0)
     const prevScroll = useRef(0);
+    const videoRef = useRef(null);
+
 
 
 
@@ -36,6 +38,16 @@ export default function BackgroundVideoSection({ scaleText, setScaleText, rightT
     }, [scrollHeight]);
 
 
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.muted = true;
+            videoRef.current.play().catch((e) => {
+                console.warn("Autoplay failed:", e);
+            });
+        }
+    }, []);
+
+
     return (
         <div className="w-full h-screen absolute mx-auto -z-30 p-2 left-0 pb-5 right-0 bg-[#ffffff]">
             <div className="w-full h-full relative">
@@ -52,7 +64,15 @@ export default function BackgroundVideoSection({ scaleText, setScaleText, rightT
                 </h3>
 
                 <div className="w-[inherit] h-full bg-[#0000004f] absolute z-10 rounded-2xl"></div>
-                <video className="w-full object-cover h-full rounded-2xl" src="/assets/Videos/digitalworld.mp4" autoPlay muted loop></video>
+                <video
+                    ref={videoRef}
+                    className="w-full object-cover h-full rounded-2xl"
+                    src="/assets/Videos/digitalworld.mp4"
+                    autoPlay
+                    muted
+                    playsInline
+                    loop
+                ></video>
             </div>
         </div>
     );
