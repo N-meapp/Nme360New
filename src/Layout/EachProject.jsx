@@ -55,7 +55,7 @@ export default function EachProject({ id, colorCode1, colorCode2, translateY, sc
                     >
                         <img className="rounded-2xl object-cover object-center w-full h-full" src={image}></img>
 
-                        <button className="w-[96%] bg-[#ffffff] h-[63px] rounded-2xl text-[18px] jamjuree text-[#00000081] absolute bottom-2 right-2 left-2 justify-self-center">
+                        <button className="w-[96%] bg-[#ffffff] h-[63px] rounded-2xl text-[18px] jamjuree text-[#00000081] absolute bottom-2 right-2 left-2">
                             Explore {currentProject}
                         </button>
                     </div>

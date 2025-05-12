@@ -29,7 +29,7 @@ export default function SecondTextSection({descriptionScrollHeight}) {
         <>
             <div id="second-text" className="w-full h-screen text-3xl md:text-[54px] md:leading-[70px] font-semibold jamjuree text-[#606060] bg-[#BBBBBB] content-center text-center relative pointer-events-none">
 
-                    <div className="w-fit h-fit absolute justify-self-center bottom-1/2 right-0 left-0"
+                    <div className="w-full h-fit absolute text-center bottom-1/2 right-0 left-0"
                     
                     style={{
                         transform: `translateY(${translateY*0.4}px)`,
@@ -43,7 +43,7 @@ export default function SecondTextSection({descriptionScrollHeight}) {
                         )}
                     </div>
 
-                    <div className="w-fit h-fit absolute justify-self-center bottom-1/2 right-0 left-0"
+                    <div className=" h-fit absolute w-full text-center bottom-1/2 right-0 left-0"
                     style={{
                         transform: `translateY(${translateY*0.4}px)`,
                         transition: "transform 0.05s linear, width 0.5s ease",

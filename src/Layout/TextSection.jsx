@@ -17,7 +17,7 @@ export default function TextSection() {
         <>
             <div className="w-full h-screen text-[40px] md:text-[54px] font-semibold jamjuree text-[#868585] bg-[#ffffff] content-center text-center relative pointer-events-none">
 
-                    <div className="w-fit h-fit absolute justify-self-center bottom-1/2 right-0 left-0 md:leading-[70px]"
+                    <div className=" h-fit absolute w-full text-center bottom-1/2 right-0 left-0 md:leading-[70px]"
                     style={{
                         transform: `translateY(${scrollHeight*0.2}px)`,
                         transition: "transform 0.05s linear, width 0.5s ease",
@@ -29,7 +29,7 @@ export default function TextSection() {
                         )}
                     </div>
 
-                    <div className="w-fit h-fit absolute justify-self-center bottom-1/2 right-0 left-0 md:leading-[70px]"
+                    <div className=" h-fit absolute w-full text-center bottom-1/2 right-0 left-0 md:leading-[70px]"
                     style={{
                         transform: `translateY(${scrollHeight*0.2}px)`,
                         transition: "transform 0.05s linear, width 0.5s ease",
