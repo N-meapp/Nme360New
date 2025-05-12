@@ -31,7 +31,7 @@ export default function LandingSection() {
         <div
           className="bg-[white] mx-auto w-full h-screen bg-cover bg-center bg-no-repeat relative"
           style={{
-            backgroundImage: "url('/public/assets/Images/header/Rectangle.png')",
+            backgroundImage: "url('/assets/Images/header/Rectangle.png')",
             width: width,
             borderRadius: radius,
             transition: "width 0.05s linear ease, border-radius 0.05s ease",

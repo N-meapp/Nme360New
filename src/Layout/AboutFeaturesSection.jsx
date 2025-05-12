@@ -25,13 +25,13 @@ export default function AboutFeaturesSection({ translateY2 }) {
                             }}
                         >
                             <div className="flex flex-col gap-[24px]">
-                                <FeaturesCard selectedCard={selectedCard} setSelectedCard={setSelectedCard} limitedCard={limitedCard} setLimitedCard={setLimitedCard} bg={'#B2A4FF'} icon={'/public/assets/Images/About/smart.png'} color={'white'} text={'Smart'} shrinkText={'Speed'} description={'Smart technology simplifies tasks and enhances efficiency.'} />
-                                <FeaturesCard selectedCard={selectedCard} setSelectedCard={setSelectedCard} limitedCard={limitedCard} setLimitedCard={setLimitedCard} bg={'#FFB4B4'} icon={'/public/assets/Images/About/speed.png'} color={'white'} text={'Speed'} shrinkText={'Smart'} description={'Experience unmatched speed for seamless performance.'} />
+                                <FeaturesCard selectedCard={selectedCard} setSelectedCard={setSelectedCard} limitedCard={limitedCard} setLimitedCard={setLimitedCard} bg={'#B2A4FF'} icon={'/assets/Images/About/smart.png'} color={'white'} text={'Smart'} shrinkText={'Speed'} description={'Smart technology simplifies tasks and enhances efficiency.'} />
+                                <FeaturesCard selectedCard={selectedCard} setSelectedCard={setSelectedCard} limitedCard={limitedCard} setLimitedCard={setLimitedCard} bg={'#FFB4B4'} icon={'/assets/Images/About/speed.png'} color={'white'} text={'Speed'} shrinkText={'Smart'} description={'Experience unmatched speed for seamless performance.'} />
                             </div>
 
                             <div className="flex flex-col gap-[24px]">                                
-                                <FeaturesCard selectedCard={selectedCard} setSelectedCard={setSelectedCard} limitedCard={limitedCard} setLimitedCard={setLimitedCard} bg={'#FDF7C3'} icon={'/public/assets/Images/About/secure.png'} color={'#434343'} text={'Secure'} shrinkText={'Support'} description={'Top-notch security features protect your data at all times.'} />
-                                <FeaturesCard selectedCard={selectedCard} setSelectedCard={setSelectedCard} limitedCard={limitedCard} setLimitedCard={setLimitedCard} bg={'#FFDEB4'} icon={'/public/assets/Images/About/support.png'} color={'#434343'} text={'Support'} shrinkText={'Secure'} description={'Unparalleled support ensures your success.'} />
+                                <FeaturesCard selectedCard={selectedCard} setSelectedCard={setSelectedCard} limitedCard={limitedCard} setLimitedCard={setLimitedCard} bg={'#FDF7C3'} icon={'/assets/Images/About/secure.png'} color={'#434343'} text={'Secure'} shrinkText={'Support'} description={'Top-notch security features protect your data at all times.'} />
+                                <FeaturesCard selectedCard={selectedCard} setSelectedCard={setSelectedCard} limitedCard={limitedCard} setLimitedCard={setLimitedCard} bg={'#FFDEB4'} icon={'/assets/Images/About/support.png'} color={'#434343'} text={'Support'} shrinkText={'Secure'} description={'Unparalleled support ensures your success.'} />
                             </div>
 
                         </div>
