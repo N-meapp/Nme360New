@@ -41,7 +41,7 @@ export default function BackgroundVideoSection({ scaleText, setScaleText, rightT
             <div className="w-full h-full relative">
                 <h3
                     id="text"
-                    className="text-3xl md:text-[54px] font-semibold jamjuree absolute bg-[red] top-[50%] left-1/2 w-fit h-fit z-20 text-center text-white"
+                    className="text-3xl md:text-[54px] font-semibold jamjuree absolute top-[50%] left-1/2 w-fit h-fit z-20 text-center text-white"
                     style={{
                         transform: `translate(-50%, -50%) scale(${scaleText})`,
                         opacity: opacity,
