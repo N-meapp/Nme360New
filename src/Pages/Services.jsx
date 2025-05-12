@@ -12,10 +12,10 @@ export default function Services() {
 
     return (
         <>
-        <div className="w-full h-auto pt-28 md:pt-20 bg-white pb-10 md:pb-20 jamjuree">
+        <div className="w-full h-auto pt-28 md:pt-20 bg-[#f9f9f9] pb-10 md:pb-20 jamjuree">
 
 
-                <div className="bg-white px-4">
+                <div className="bg-[#f9f9f9] px-4">
                     <div className="max-w-full mx-auto text-center">
                         <div className="text-center md:py-12 px-12 pb-0">
                             <p className="text-black text-[24px]">

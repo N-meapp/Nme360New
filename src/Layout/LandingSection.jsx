@@ -7,7 +7,7 @@ export default function LandingSection() {
   const { scrollHeight, setScrollHeight } = useContext(ScrollContext);
   const translateY = scrollHeight * -0.2; // Move slower than scroll
   const radius = `${Math.min(Math.max(1, scrollHeight * 0.1), 24)}px`; // min 16px, max 50px
-  const width = `${Math.max(97, 100 - scrollHeight * 0.01)}%`; // min width 97%
+  const width = `${Math.max(98, 100 - scrollHeight * 0.01)}%`;
 
 
 
@@ -17,7 +17,17 @@ export default function LandingSection() {
 
   return (
     <>
-      <div className="w-full h-fit bg-[white]">
+    {/* <div className="w-full absolute h-screen bg-[#ff000000] z-50 text-[white]  pl-[108px] content-end">
+    <h3 className="text-[60px] md:text-[90px] lg:text-[135px] xl:text-[180px] lg:leading-[173px] md:leading-tight font-semibold poppins w-full" style={{
+                transform: `translateY(${translateY}px)`,
+                transition: "transform 0.05s linear ease",
+              }}>
+                your future
+                <br />
+                coded
+              </h3>
+    </div> */}
+      <div className="w-full h-fit bg-[white] ">
         <div
           className="bg-[white] mx-auto w-full h-screen bg-cover bg-center bg-no-repeat relative"
           style={{
@@ -36,7 +46,7 @@ export default function LandingSection() {
             }}
 
           >
-            <div className={`text-[white] md:hidden flex w-full text-center top-0 bottom-0`}>
+            <div className={`text-[white] md:hidden flex w-full text-center top-0 bottom-0 `}>
               <h3 className="text-[80px] leading-tight font-semibold poppins w-full" style={{
                 transform: `translateY(${translateY}px)`,
                 transition: "transform 0.05s linear ease",

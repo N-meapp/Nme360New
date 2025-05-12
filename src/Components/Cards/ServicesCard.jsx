@@ -1,9 +1,9 @@
-export default function ServicesCard({ service }) {
+export default function ServicesCard({ service,left,top }) {
 
 
     return (
         <>
-            <div className={`md:w-[295px] w-[95%] md:h-[391px] flex-shrink-0 rounded-lg p-[30px] flex-col flex justify-between`}
+            <div className={`md:w-[295px] w-[295px] md:h-[391px] flex-shrink-0 rounded-lg p-[30px] flex-col gap-[50px] flex text-start`}
                 style={{ backgroundColor: service.cardColor }}
 
             >

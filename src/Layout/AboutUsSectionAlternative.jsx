@@ -57,9 +57,7 @@ export default function AboutUsSectionAlternative({
     const rect = aboutDiv.getBoundingClientRect();
     if(rect.top<=0){
       
-    
-      // console.log(rect.top,'rect..toooopp');
-      
+          
       setRightTranslateX(Math.abs(rect.top)*0.9)
       setleftTranslateX(rect.top *0.9)
 
@@ -83,8 +81,8 @@ export default function AboutUsSectionAlternative({
 
   return (
     <>
-      <div id="about-div" className="w-full h-[50vh] md:h-[200vh] p-2 -z-10 bg-[#ffffff00] overflow-hidden">
-      <div className="w-full h-screen md:h-full rounded-2xl md:flex">
+      <div id="about-div" className="w-full h-[60vh] md:h-[50vh] p-2 -z-10 bg-[#ffffff00] overflow-hidden mt-52">
+      <div className="w-full h-full md:h-full rounded-2xl md:flex">
         <div
           id="left-div"
           onMouseEnter={() => setIsPointLeft(true)}
@@ -101,7 +99,7 @@ export default function AboutUsSectionAlternative({
           onMouseEnter={() => setIsPointLeft(false)}
           className={`${
             !isPointLeft ? "h-[62%] md:w-[62%]" : "h-[38%] md:w-[38%]"
-          } overflow-hidden w-full md:h-full rounded-2xl transition-[width] duration-500 ease-in-out relative`}
+          } overflow-hidden w-full md:h-full rounded-2xl transition-[width] duration-500 ease-in-out relative md:mt-0`}
           style={{
             transform: `translateX(${rightTranslateX}px)`,
             transition: "transform 0.5s linear, border-radius 0.2s ease",

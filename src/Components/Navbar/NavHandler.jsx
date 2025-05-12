@@ -36,18 +36,18 @@ export default function NavHandler() {
       <div
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`relative p-[1px] md:p-[2px] bg-white rounded-md h-[50px] md:h-[80px] transition-all duration-500 overflow-hidden md:flex hidden ${isHovered ? 'w-[700px]' : 'w-[110px] md:w-[219.45px]'
+        className={`relative p-[1px] md:p-[2px] bg-white rounded-md h-[50px] md:h-[80px] transition-all duration-500 overflow-hidden md:flex hidden ${isHovered ? 'w-[750px]' : 'w-[110px] md:w-[219.45px]'
           }`}
         style={{ transition: "all 0.5s ease" }} // For smoother transform
       >
         {/* Left Part */}
         <div className="flex-1 h-full flex items-center justify-center relative">
           {isHovered ? (
-            <div className="flex gap-7 absolute left-4 top-0 h-full items-center">
+            <div className="flex gap-7 absolute top-0 h-full items-center mx-auto w-fit">
               {navArray.map((tab, index) => (
                 <h3
                   key={index}
-                  className="md:text-sm text-xs font-medium text-[#000000] jamjuree cursor-pointer"
+                  className="md:text-sm text-xs font-medium text-[#444343] jamjuree cursor-pointer hover:text-[white] p-2 hover:bg-[#3F37A5] transition-all rounded-lg"
                   onClick={() => {
                     handleNav(tab)
                   }}
@@ -96,7 +96,7 @@ export default function NavHandler() {
             {navArray.map((tab, index) => (
               <h3
                 key={index}
-                className="text-xs font-medium text-black jamjuree cursor-pointer"
+                className="text-xs font-medium text-[#444343] jamjuree cursor-pointer"
                 onClick={() => handleNav(tab)
                 }
               >

@@ -65,7 +65,8 @@ export const services = [
         description: 'Delivering targeted digital marketing campaigns that elevate brand awareness and maximize ROI.',
         icon: '/public/assets/Images/services/digitalm.png',
         cardColor: '#F0F5E9',
-        titleColor: '#78AE26'
+        titleColor: '#78AE26',
+        
 
     },
     {

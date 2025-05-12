@@ -28,7 +28,7 @@ export default function DescriptionSection({setStartStickyScrolling}) {
     return (
         <>
             <div id="scrolling-element" className="w-full h-screen fixed bg-[#ffffff] content-center">   
-                <div className="w-[64%] ml-[9%] text-3xl md:text-[80px] md:leading-[90px] font-semibold jamjuree " style={{
+                <div className="w-[64%] ml-[9%] text-3xl md:text-[54px] md:leading-[70px] font-semibold jamjuree " style={{
         // transform: `translateY(${translateY/5}px)`,
         transition: "transform 0.01s linear ease",
       }}>

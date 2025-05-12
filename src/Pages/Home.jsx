@@ -62,14 +62,15 @@ export default function Home() {
         setStartStickyScrolling={setStartStickyScrolling}
       />
         <DescriptionSectionAlternative setIsStartScrolling={setIsStartScrolling} />
-        
         <FutureProjects startStickyScrolling={startStickyScrolling} projectsScrollHeight={projectsScrollHeight} descriptionScrollHeight={descriptionScrollHeight} setDescriptionScrollHeight={setDescriptionScrollHeight} backendScrollHeight={backendScrollHeight} backendTopRect={backendTopRect} thridDescriptionScrollHeight={thridDescriptionScrollHeight} />
         <FutureProjectsAlternative projectsScrollHeight={projectsScrollHeight} setProjectsScrollHeight={setProjectsScrollHeight} /> 
         <DescriptionSectionTwoAtlernative setDescriptionScrollHeight={setDescriptionScrollHeight} />  
         <BackendWorksAlternative setBackendScrollHeight={setBackendScrollHeight} backendScrollHeight={backendScrollHeight} backendTopRect={backendTopRect} setBackendTopRect={setBackendTopRect} />
         <DescriptionSectionThreeAlternative setDescriptionScrollHeight={setThridDescriptionScrollHeight} />
+        <div className="bg-[white] w-full h-fit">
         <DescriptionSectionThree connectWithScrollHeight={connectWithScrollHeight} setConnectWithScrollHeight={setConnectWithScrollHeight} />
         <ConnectWithUsSectionAlternative setConnectWithScrollHeight={setConnectWithScrollHeight} />
+        </div>
         
 
       {/* </Scroll> */}

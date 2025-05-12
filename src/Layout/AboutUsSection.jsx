@@ -59,12 +59,34 @@ export default function AboutUsSection({
     if (isStartScrolling) {
       // setTranslateY(divHeight + divHeight + divHeight / 2 + scrollHeight * -0.5)
       const windowHeight = window.innerHeight;
-      setTranslateY(-windowHeight-isStartScrolling)
-      console.log(windowHeight-isStartScrolling,'hahahahaa');
+
+      if(-windowHeight-isStartScrolling>0){
+        setTranslateY(-windowHeight-isStartScrolling)
+      }else{
+        setTranslateY(0)
+      }
       
+    }else{
     }
 
   }, [scrollHeight])
+
+
+  const handleLeft =()=>{
+    // console.log(leftTranslateX,rightTranslateX,'haaaaii');
+    // if(Math.abs(leftTranslateX)>0 && Math.abs(leftTranslateX)<100){
+    //   return setTimeout(() => {
+    //      return leftTranslateX
+    //    }, 1000);
+
+    // }else{
+    //   return leftTranslateX
+    // }
+    return leftTranslateX
+    
+    
+  }
+
 
 
   return (
@@ -83,16 +105,21 @@ export default function AboutUsSection({
               ref={divRef}
               className={`${isPointLeft ? "w-[62%]" : "w-[38%]"
                 }  overflow-hidden h-full transition-all duration-500 rounded-2xl bg-[#00000000] relative text-center content-center`} style={{
-                  transform: `translateX(${leftTranslateX}px)`,
+                  transform: `translateX(${handleLeft()}px)`,
                   transition: "transform 0.05s linear, width 0.5s ease",
                 }}>
               <img
                 className={`w-[99vw] max-w-none top-0 absolute h-screen -z-20 object-cover left-0`}
-                src="/public/assets/Images/header/us2.jpg"
+                src="/public/assets/Images/header/us4.jpg"
               ></img>
-              <h3 className="text-[54px] text-[white] font-semibold jamjuree">
+              <h3   className="text-[54px] text-[white] font-semibold jamjuree">
                 About Us
               </h3>
+              <div
+              style={{
+                transform: `translateY(${isPointLeft?0:20}rem)`,
+                transition: "transform 0.5s linear, width 0.5s ease",
+              }} className="w-60 lg:w-96 h-fit p-12 rounded-xl bg-[#86858562] absolute bottom-2 left-2 text-left text-white leading-loose jamjuree">We turn digital ideas into business success. At N-ME 360, we design, develop, and market digital solutions that make brands stand out and connect with their audience.</div>
             </div>
             <div
               className={`${!isPointLeft ? "w-[62%]" : "w-[38%]"
@@ -104,12 +131,17 @@ export default function AboutUsSection({
             >
               <img
                 className={`w-[99vw] max-w-none top-0 absolute h-screen -z-30 object-cover right-0`}
-                src="/public/assets/Images/header/us2.jpg"
+                src="/public/assets/Images/header/us4.jpg"
               ></img>
               <div className="w-full h-full bg-[#00000080] text-center content-center">
                 <h3 className="text-[54px] text-[white] font-semibold jamjuree">
                   The Why
                 </h3>
+                <div 
+                 style={{
+                  transform: `translateY(${isPointLeft?20:0}rem)`,
+                  transition: "transform 0.5s linear, width 0.5s ease",
+                }} className="w-60 lg:w-96 h-fit p-12 rounded-xl bg-[#86858562] absolute bottom-2 right-2 text-left text-white leading-loose jamjuree">Why choose us? We don’t just deliver services, we deliver growth. Our end-to-end digital expertise ensures your brand gets seen, heard, and remembered.</div>
               </div>
             </div>
           </div>
@@ -135,7 +167,7 @@ export default function AboutUsSection({
                 }}>
               <img
                 className={`w-[99vw] max-w-none top-0 absolute h-screen -z-20 object-cover`}
-                src="/public/assets/Images/header/us2.jpg"
+                src="/public/assets/Images/header/us4.jpg"
               ></img>
               <h3 className="text-3xl md:text-[54px] text-[white] font-semibold jamjuree">
                 About Us
@@ -151,7 +183,7 @@ export default function AboutUsSection({
             >
               <img
                 className={`w-[99vw] max-w-none -bottom-5 absolute h-screen -z-30 object-cover`}
-                src="/public/assets/Images/header/us2.jpg"
+                src="/public/assets/Images/header/us4.jpg"
               ></img>
               <div className="w-full h-full bg-[#00000080] text-center content-center">
                 <h3 className="text-3xl md:text-[54px] text-[white] font-semibold jamjuree">

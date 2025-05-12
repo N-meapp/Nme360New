@@ -1,26 +1,32 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ScrollContext } from "../main";
 
 export default function BackgroundVideoSection({ scaleText, setScaleText, rightTranslateX,isPartiallyVisible }) {
 
     const { scrollHeight } = useContext(ScrollContext);
+    const [opacity,setOpacity] = useState(0)
     const prevScroll = useRef(0);
 
     
 
     useEffect(() => {
+        console.log(scaleText);
+        
         const isScrollingDown = scrollHeight > prevScroll.current;
 
         if (rightTranslateX > 0) {
             if (scaleText <= 1) {
                 setScaleText(scaleText + 0.10);
+                setOpacity(1)
             }
 
             if (!isScrollingDown && isPartiallyVisible) {
-                setScaleText(scaleText - 0.01);
+                setScaleText(scaleText - 0.05);
+                setOpacity(0.5)
             }
         }else{
-            setScaleText(0)
+            setScaleText(0.8)
+            setOpacity(0)
             
         }
         
@@ -34,9 +40,9 @@ export default function BackgroundVideoSection({ scaleText, setScaleText, rightT
         <div className="w-full h-screen absolute mx-auto -z-30 p-2 left-0 pb-5 right-0 bg-[#ffffff]">
             <div className="w-full h-full relative">
                 <h3 id="text" className="text-3xl md:text-[54px] font-semibold jamjuree absolute top-0 bottom-0 right-0 left-0 w-fit h-fit justify-self-center self-center z-20 text-center text-white" style={{
-                    // transform: `scale(${scaleText})`,
-                    opacity:scaleText,
-                    transition: "transform 1s ease, opacity 1s ease",
+                    transform: `scale(${scaleText})`,
+                    opacity:opacity,
+                    transition: "transform 1s ease, opacity 2s ease",
                 }}>
                     Together we built the future
                 </h3>

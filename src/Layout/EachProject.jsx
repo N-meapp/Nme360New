@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-export default function EachProject({ id, colorCode1, colorCode2, translateY, scrollHeight, setCurrentProject, currentProject, image, mobile }) {
+export default function EachProject({ id, colorCode1, colorCode2, translateY, scrollHeight, setCurrentProject, currentProject, image, mobile,description, setCurrentDescription }) {
 
     const eachprojectRef = useRef(null);
 
@@ -13,6 +13,7 @@ export default function EachProject({ id, colorCode1, colorCode2, translateY, sc
             // let tempArray = currentProject
             // tempArray.push(id)
             setCurrentProject(id)
+            setCurrentDescription(description)
         }
     };
 
@@ -33,7 +34,7 @@ export default function EachProject({ id, colorCode1, colorCode2, translateY, sc
                         <hr className="w-[67%] mx-auto border-[#1F1F1F1A] border-[1px] mt-[8%]" />
                         <div className="w-[70%] h-auto mx-auto text-center mt-[8%]">
                             <h3 className="text-[16px] jamjuree">
-                                n-me app is an innovative platform designed to revolutionize how users discover and engage with local businesses.
+                                {description}
                             </h3>
                         </div>
                     </div>

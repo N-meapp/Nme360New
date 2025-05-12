@@ -14,7 +14,7 @@ export default function AboutUs() {
     return (
         <>
 
-        <div className="w-full h-auto pt-28 md:pt-20 bg-white pb-10 md:pb-20 jamjuree">
+        <div className="w-full h-auto pt-28 md:pt-20 bg-[#f9f9f9] pb-10 md:pb-20 jamjuree">
 
                 <div className="text-center md:py-12 px-12 pb-0">
                     <p className="text-black text-[24px]">
@@ -52,7 +52,7 @@ export default function AboutUs() {
                <AboutFeaturesSection translateY2={translateY2} />
 
 
-                <div className="bg-white flex items-center justify-center px-4 mb-5"
+                <div className=" flex items-center justify-center px-4 mb-5"
                     style={{
                         transform: `translateY(${translateY3}px)`,
                         transition: "transform 0.05s linear ease",
