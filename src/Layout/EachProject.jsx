@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-export default function EachProject({ id, colorCode1, colorCode2, translateY, scrollHeight, setCurrentProject, currentProject, image, mobile,description, setCurrentDescription }) {
+export default function EachProject({ id, colorCode1, colorCode2, translateY, scrollHeight, setCurrentProject, currentProject, image, mobile, description, setCurrentDescription }) {
 
     const eachprojectRef = useRef(null);
 
@@ -46,13 +46,16 @@ export default function EachProject({ id, colorCode1, colorCode2, translateY, sc
                             background: colorCode2
                                 ? `linear-gradient(to right, ${colorCode1}, ${colorCode2})`
                                 : colorCode1,
+                            // transform: `translateY(${translateY}px)`,
+                            // transition: "transform 0.01s linear ease-out",
                             transform: `translateY(${translateY}px)`,
-                            transition: "transform 0.01s linear ease-out",
+                            willChange: "transform",
+
                         }}
                     >
                         <img className="rounded-2xl object-cover object-center w-full h-full" src={image}></img>
 
-                        <button className="w-[96%] bg-[#ffffff] h-[63px] rounded-2xl text-[18px] jamjuree text-[#00000081] absolute bottom-2 right-0 left-0 justify-self-center">
+                        <button className="w-[96%] bg-[#ffffff] h-[63px] rounded-2xl text-[18px] jamjuree text-[#00000081] absolute bottom-2 right-2 left-2 justify-self-center">
                             Explore {currentProject}
                         </button>
                     </div>

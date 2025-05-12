@@ -28,10 +28,14 @@ export default function FutureProjects({ startStickyScrolling, projectsScrollHei
             const scrollingDiv2 = document.getElementById('scrolling-div-2');
             scrollingDiv2.scrollTo({
                 top: Math.abs(projectsScrollHeight),
-                // behavior: 'smooth'
+                
             });
         }
         setOldScrollRate(scrollHeight)
+        console.log(scrollHeight);
+        console.log(projectsScrollHeight);
+        
+        
 
 
     }, [scrollHeight]);
@@ -85,7 +89,7 @@ export default function FutureProjects({ startStickyScrolling, projectsScrollHei
 
                     {/* Right scrolling div */}
                     <div id="scrolling-div"
-                        className="w-[60%] h-auto rounded-2xl relative overflow-hidden">
+                        className="w-[60%] h-auto rounded-2xl relative overflow-hidden md:block hidden">
 
                         <EachProject mobile={false} setCurrentDescription={setCurrentDescription} colorCode1={'#05BCF6'} colorCode2={'#036E90'} id={'nmeapp'} translateY={translateY} scrollHeight={scrollHeight} setCurrentProject={setCurrentProject} currentProject={currentProject} description={'N-me app helps businesses and freelancers list their services, get discovered by users, and grow—locally and globally, all in one easy-to-use platform.'} image={'/assets/Images/projects/nmeapp.png'} />
                         <EachProject mobile={false} setCurrentDescription={setCurrentDescription} colorCode1={'#88c247'} colorCode2={'#5a7f30'} id={'buysel'} translateY={translateY} scrollHeight={scrollHeight} setCurrentProject={setCurrentProject} description={'Buysel is a real estate platform where you can buy, sell, rent, or lease properties listed by both owners and brokers—simple, direct, and reliable.'} currentProject={currentProject} image={'/assets/Images/projects/buysel2.png'} />
@@ -95,11 +99,11 @@ export default function FutureProjects({ startStickyScrolling, projectsScrollHei
                 </div>
 
 
-                <div className="w-full h-screen p-3 bg-[#BBBBBB] gap-2 md:hidden block">
+                <div  className="w-full h-screen p-3 bg-[#BBBBBB] gap-2 md:hidden block">
 
 
                     <div id="scrolling-div-2"
-                        className="w-ful h-full  relative rounded-2xl overflow-hidden flex flex-col gap-2">
+                        className="w-full h-full relative rounded-2xl overflow-hidden flex flex-col gap-2">
                         <EachProject mobile={true} setCurrentDescription={setCurrentDescription} colorCode1={'#05BCF6'} colorCode2={'#036E90'} id={'nmeapp'} description={'N-me app helps businesses and freelancers list their services, get discovered by users, and grow—locally and globally, all in one easy-to-use platform.'} translateY={translateY} scrollHeight={scrollHeight} setCurrentProject={setCurrentProject} currentProject={'nmeapp'} image={'/assets/Images/projects/nmeapp.png'} />
                         <EachProject mobile={true} setCurrentDescription={setCurrentDescription} colorCode1={'#88c247'} colorCode2={'#5a7f30'} id={'buysel'} description={'Buysel is a real estate platform where you can buy, sell, rent, or lease properties listed by both owners and brokers—simple, direct, and reliable.'} translateY={translateY} scrollHeight={scrollHeight} setCurrentProject={setCurrentProject} currentProject={'buysel'} image={'/assets/Images/projects/buysel2.png'} />
                         <EachProject mobile={true} setCurrentDescription={setCurrentDescription} colorCode1={''} colorCode2={''} id={'ticketto'} description={'Tiketto is your all-in-one ticketing hub book movies, sports, concerts, and more with lower fees, instant access, and complete event listings in one click.'} translateY={translateY} scrollHeight={scrollHeight} setCurrentProject={setCurrentProject} currentProject={'ticketto'} image={'/assets/Images/projects/tickets.jpg'} />
