@@ -74,16 +74,15 @@ export default function App() {
 
                 <Route path="*" element={<Home />} />
               </Routes>
-              <Footer />
-              <FooterAlternative />
-            </BrowserRouter>
-          </Scroll>
-
-        </>
-
-      }
-
-    </>
+              </BrowserRouter>
+              </Scroll>
+              
+              </>
+              
+            }
+            
+            </>
+            // <FooterAlternative />
 
   )
 }

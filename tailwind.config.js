@@ -19,7 +19,17 @@ module.exports = withMT({
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-912px)' }, // 4 images * 200px
+        },
+      },
+      animation: {
+        scroll: 'scroll linear infinite',
+      },
+    },
   },
   plugins: [],
 });

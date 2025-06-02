@@ -16,6 +16,11 @@ import ConnectWithUsSectionAlternative from "../Layout/ConnectWithUsSectionAlter
 import FooterAlternative from "../Layout/FooterAlternative";
 import Footer from "../Layout/Footer";
 import Loader from "../Layout/Loader";
+import InfiniteCarosel from "../Components/Scrollbar/InfiniteCarosel";
+import EachFeatures from "../Components/Cards/EachFeatures";
+import FeaturesSection from "../Layout/FeaturesSection";
+import ServiceSection from "../Layout/ServiceSection";
+import WhyChooseUs from "../Layout/WhyChooseUs";
 
 export default function Home() {
   const [isPointLeft, setIsPointLeft] = useState(true);
@@ -39,41 +44,78 @@ export default function Home() {
 
 
   return (
-    <>
+    // <>
 
 
       
-        <LandingSection />
-       <TextSection />
-        <AboutUsSectionAlternative
-          setIsPointLeft={setIsPointLeft}
-          isPointLeft={isPointLeft}
-          leftTranslateX={leftTranslateX}
-          setleftTranslateX={setleftTranslateX}
-          rightTranslateX={rightTranslateX}
-          setRightTranslateX={setRightTranslateX}
-        />
-         <AboutUsSection
-        setIsPointLeft={setIsPointLeft}
-        isPointLeft={isPointLeft}
-        leftTranslateX={leftTranslateX}
-        rightTranslateX={rightTranslateX}
-        isStartScrolling={isStartScrolling}
-        setStartStickyScrolling={setStartStickyScrolling}
-      />
-        <DescriptionSectionAlternative setIsStartScrolling={setIsStartScrolling} />
-        <FutureProjects startStickyScrolling={startStickyScrolling} projectsScrollHeight={projectsScrollHeight} descriptionScrollHeight={descriptionScrollHeight} setDescriptionScrollHeight={setDescriptionScrollHeight} backendScrollHeight={backendScrollHeight} backendTopRect={backendTopRect} thridDescriptionScrollHeight={thridDescriptionScrollHeight} />
-        <FutureProjectsAlternative projectsScrollHeight={projectsScrollHeight} setProjectsScrollHeight={setProjectsScrollHeight} /> 
-        <DescriptionSectionTwoAtlernative setDescriptionScrollHeight={setDescriptionScrollHeight} />  
-        <BackendWorksAlternative setBackendScrollHeight={setBackendScrollHeight} backendScrollHeight={backendScrollHeight} backendTopRect={backendTopRect} setBackendTopRect={setBackendTopRect} />
-        <DescriptionSectionThreeAlternative setDescriptionScrollHeight={setThridDescriptionScrollHeight} />
-        <div className="bg-[white] w-full h-fit">
-        <DescriptionSectionThree connectWithScrollHeight={connectWithScrollHeight} setConnectWithScrollHeight={setConnectWithScrollHeight} />
-        <ConnectWithUsSectionAlternative setConnectWithScrollHeight={setConnectWithScrollHeight} />
-        </div>
+        // <LandingSection />
+    //    <TextSection />
+    //     <AboutUsSectionAlternative
+    //       setIsPointLeft={setIsPointLeft}
+    //       isPointLeft={isPointLeft}
+    //       leftTranslateX={leftTranslateX}
+    //       setleftTranslateX={setleftTranslateX}
+    //       rightTranslateX={rightTranslateX}
+    //       setRightTranslateX={setRightTranslateX}
+    //     />
+    //      <AboutUsSection
+    //     setIsPointLeft={setIsPointLeft}
+    //     isPointLeft={isPointLeft}
+    //     leftTranslateX={leftTranslateX}
+    //     rightTranslateX={rightTranslateX}
+    //     isStartScrolling={isStartScrolling}
+    //     setStartStickyScrolling={setStartStickyScrolling}
+    //   />
+    //     <DescriptionSectionAlternative setIsStartScrolling={setIsStartScrolling} />
+    //     <FutureProjects startStickyScrolling={startStickyScrolling} projectsScrollHeight={projectsScrollHeight} descriptionScrollHeight={descriptionScrollHeight} setDescriptionScrollHeight={setDescriptionScrollHeight} backendScrollHeight={backendScrollHeight} backendTopRect={backendTopRect} thridDescriptionScrollHeight={thridDescriptionScrollHeight} />
+    //     <FutureProjectsAlternative projectsScrollHeight={projectsScrollHeight} setProjectsScrollHeight={setProjectsScrollHeight} /> 
+    //     <DescriptionSectionTwoAtlernative setDescriptionScrollHeight={setDescriptionScrollHeight} />  
+    //     <BackendWorksAlternative setBackendScrollHeight={setBackendScrollHeight} backendScrollHeight={backendScrollHeight} backendTopRect={backendTopRect} setBackendTopRect={setBackendTopRect} />
+    //     <DescriptionSectionThreeAlternative setDescriptionScrollHeight={setThridDescriptionScrollHeight} />
+    //     <div className="bg-[white] w-full h-fit">
+    //     <DescriptionSectionThree connectWithScrollHeight={connectWithScrollHeight} setConnectWithScrollHeight={setConnectWithScrollHeight} />
+    //     <ConnectWithUsSectionAlternative setConnectWithScrollHeight={setConnectWithScrollHeight} />
+    //     </div>
         
 
-      {/* </Scroll> */}
-    </>
+    //   {/* </Scroll> */}
+    // </>
+    <div className="">
+
+    <div className="w-full h-screen relative">
+    <div className="h-fit w-full pl-8 pt-52">
+      <h3 className="poppins md:text-7xl text-5xl font-semibold">Your future <br></br> coded</h3>
+      <h3 className="md:text-2xl text-xl font-semibold jamjuree mt-2">Revolutionizing
+      IT for a
+      <br />
+      Connected
+      <br />
+      World.</h3>
+      <div className="w-full h-fit">
+      <div className="p-3 bg-[#3f37a5] rounded-lg mt-5 text-[white] absolute z-10 text-xs md:text-base cursor-pointer">Explore</div>
+      <img className="w-full md:w-1/2 md:absolute -z-40 md:top-0 md:right-0 md:rotate-180" src="/assets/Images/header/connection.jpg">
+      </img>
+      </div>
+    </div>
+    </div>
+    <div>
+    <InfiniteCarosel />
+    </div>
+
+    <FeaturesSection />
+
+    <ServiceSection />
+
+
+    <WhyChooseUs />
+
+    <AboutUsSection />
+
+
+    <Footer />
+
+    </div>
+
+
   );
 }

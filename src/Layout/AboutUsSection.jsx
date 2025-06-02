@@ -1,203 +1,70 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import Scroll from "../Components/Scrollbar/SmoothScroll";
-import { text } from "@fortawesome/fontawesome-svg-core";
-import BackgroundVideoSection from "./BackgroundVideoSection";
-import { ScrollContext } from "../main";
-import DescriptionSection from "./DescriptionSection";
-
-export default function AboutUsSection({
-  isPointLeft,
-  leftTranslateX,
-  rightTranslateX,
-  isStartScrolling,
-  setStartStickyScrolling
-}) {
-
-
-  const [scaleText, setScaleText] = useState(0)
-  const { scrollHeight, setScrollHeight } = useContext(ScrollContext);
-
-
-
-  const divRef = useRef(null);
-  const ContainerRef = useRef(null);
-
-  const [isPartiallyVisible, setIsPartiallyVisible] = useState(false);
-  const [translateY, setTranslateY] = useState(0)
-
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsPartiallyVisible(entry.isIntersecting);
-      },
-      {
-        root: null, // viewport
-        threshold: 0, // 0 means even 1 pixel visible = true
-      }
-    );
-
-    if (divRef.current) {
-      observer.observe(divRef.current);
-    }
-
-
-    return () => {
-      if (divRef.current) {
-        observer.unobserve(divRef.current);
-      }
-    };
-
-  }, [rightTranslateX, leftTranslateX]);
-
-  useEffect(() => {
-    let divHeight;
-    if (ContainerRef.current) {
-      divHeight = ContainerRef.current.getBoundingClientRect().height;
-    }
-
-    if (isStartScrolling) {
-      // setTranslateY(divHeight + divHeight + divHeight / 2 + scrollHeight * -0.5)
-      const windowHeight = window.innerHeight;
-
-      if(-windowHeight-isStartScrolling>0){
-        setTranslateY(-windowHeight-isStartScrolling)
-      }else{
-        setTranslateY(0)
-      }
-      
-    }else{
-    }
-
-  }, [scrollHeight])
-
-
-  const handleLeft =()=>{
-    // console.log(leftTranslateX,rightTranslateX,'haaaaii');
-    // if(Math.abs(leftTranslateX)>0 && Math.abs(leftTranslateX)<100){
-    //   return setTimeout(() => {
-    //      return leftTranslateX
-    //    }, 1000);
-
-    // }else{
-    //   return leftTranslateX
-    // }
-    return leftTranslateX
-    
-    
-  }
-
-
-
+export default function AboutUsSection() {
   return (
-    <>
-      <div className="w-full fixed top-0 -z-10 h-auto overscroll-auto bg-[white]" style={{
-        transform: `translateY(-${translateY}px)`,
-        transition: "transform 0.01s linear ease",
-      }}>
-        <div className="w-full h-screen p-2 hidden md:block" ref={ContainerRef}>
-          <BackgroundVideoSection scaleText={scaleText} setScaleText={setScaleText} rightTranslateX={rightTranslateX} isPartiallyVisible={isPartiallyVisible} />
-          <div
-            className="w-full h-full bg-cover bg-center bg-no-repeat rounded-2xl flex overflow-hidden"
-
-          >
-            <div
-              ref={divRef}
-              className={`${isPointLeft ? "w-[62%]" : "w-[38%]"
-                }  overflow-hidden h-full transition-all duration-500 rounded-2xl bg-[#00000000] relative text-center content-center`} style={{
-                  transform: `translateX(${handleLeft()}px)`,
-                  transition: "transform 0.05s linear, width 0.5s ease",
-                }}>
-              <img
-                className={`w-[99vw] max-w-none top-0 absolute h-screen -z-20 object-cover left-0`}
-                src="/assets/Images/header/us4.jpg"
-              ></img>
-              <h3   className="text-[54px] text-[white] font-semibold jamjuree">
-                About Us
-              </h3>
-              <div
-              style={{
-                transform: `translateY(${isPointLeft?0:20}rem)`,
-                transition: "transform 0.5s linear, width 0.5s ease",
-              }} className="w-60 lg:w-96 h-fit p-12 rounded-xl bg-[#86858562] absolute bottom-2 left-2 text-left text-white leading-loose jamjuree">We turn digital ideas into business success. At N-ME 360, we design, develop, and market digital solutions that make brands stand out and connect with their audience.</div>
-            </div>
-            <div
-              className={`${!isPointLeft ? "w-[62%]" : "w-[38%]"
-                }  overflow-hidden h-full rounded-2xl transition-all duration-500 relative `}
-              style={{
-                transform: `translateX(${rightTranslateX}px)`,
-                transition: "transform 0.05s linear, width 0.5s ease",
-              }}
+    <div className="mt-10 jamjuree mb-24">
+      <h3 className="text-2xl font-semibold  text-center">About Us</h3>
+      <p className="text-center mt-5 font-extralight w-[90%] justify-self-center">
+        We build smart IT solutions that drive growth and innovation.
+      </p>
+      <div className="mt-10 flex flex-col justify-center gap-8 mx-auto w-fit">
+        <div className="">
+          <h3 className="text-xl font-bold text-center">553434</h3>
+          <div className="flex justify-center gap-2 items-center mt-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 20 20"
             >
-              <img
-                className={`w-[99vw] max-w-none top-0 absolute h-screen -z-30 object-cover right-0`}
-                src="/assets/Images/header/us4.jpg"
-              ></img>
-              <div className="w-full h-full bg-[#00000080] text-center content-center">
-                <h3 className="text-[54px] text-[white] font-semibold jamjuree">
-                  The Why
-                </h3>
-                <div 
-                 style={{
-                  transform: `translateY(${isPointLeft?20:0}rem)`,
-                  transition: "transform 0.5s linear, width 0.5s ease",
-                }} className="w-60 lg:w-96 h-fit p-12 rounded-xl bg-[#86858562] absolute bottom-2 right-2 text-left text-white leading-loose jamjuree">Why choose us? We don’t just deliver services, we deliver growth. Our end-to-end digital expertise ensures your brand gets seen, heard, and remembered.</div>
-              </div>
-            </div>
+              <g fill="#3f37a5" fill-rule="evenodd" clip-rule="evenodd">
+                <path
+                  stroke="#3f37a5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M11.5 15.9L6.865 18l.533-5.13L4 9.04l4.965-1.07L11.5 3.5l2.535 4.469L19 9.039l-3.398 3.831l.533 5.13z"
+                  opacity="0.2"
+                  stroke-width="1"
+                />
+                <path d="M5.571 17.455L10 15.448l4.429 2.007a.5.5 0 0 0 .704-.507l-.51-4.91l3.251-3.668a.5.5 0 0 0-.269-.82L12.86 6.527l-2.425-4.274a.5.5 0 0 0-.87 0L7.14 6.527L2.395 7.55a.5.5 0 0 0-.27.82l3.253 3.667l-.51 4.911a.5.5 0 0 0 .703.507m4.223-3.01l-3.842 1.74l.443-4.263a.5.5 0 0 0-.123-.384l-2.83-3.191l4.128-.89a.5.5 0 0 0 .33-.242L10 3.513l2.1 3.702a.5.5 0 0 0 .33.242l4.128.89l-2.83 3.191a.5.5 0 0 0-.123.384l.443 4.263l-3.842-1.74a.5.5 0 0 0-.412 0" />
+              </g>
+            </svg>
+            <h3 className="">Total Experience</h3>
           </div>
         </div>
-
-
-
-
-
-
-        <div className="w-full h-screen p-2 block md:hidden">
-          <BackgroundVideoSection scaleText={scaleText} setScaleText={setScaleText} rightTranslateX={rightTranslateX} isPartiallyVisible={isPartiallyVisible} />
-          <div
-            className="w-full h-full bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden"
-
-          >
-            <div
-              ref={divRef}
-              className={`${isPointLeft ? "h-[62%]" : "h-[38%]"
-                }  overflow-hidden transition-all duration-500 rounded-t-2xl bg-[#00000000] relative text-center w-full content-center`} style={{
-                  transform: `translateY(${leftTranslateX}px)`,
-                  transition: "transform 0.05s linear, height 0.5s ease",
-                }}>
-              <img
-                className={`w-[99vw] max-w-none top-0 absolute h-screen -z-20 object-cover`}
-                src="/assets/Images/header/us4.jpg"
-              ></img>
-              <h3 className="text-3xl md:text-[54px] text-[white] font-semibold jamjuree">
-                About Us
-              </h3>
-            </div>
-            <div
-              className={`${!isPointLeft ? "h-[62%]" : "h-[38%]"
-                }  overflow-hidden w-full rounded-b-2xl transition-all duration-500 relative text-center content-center `}
-              style={{
-                transform: `translateY(${rightTranslateX}px)`,
-                transition: "transform 0.05s linear, height 0.5s ease",
-              }}
+        <div className="">
+          <h3 className="text-xl font-bold text-center">553434</h3>
+          <div className="flex justify-center gap-2 items-center mt-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
             >
-              <img
-                className={`w-[99vw] max-w-none -bottom-5 absolute h-screen -z-30 object-cover`}
-                src="/assets/Images/header/us4.jpg"
-              ></img>
-              <div className="w-full h-full bg-[#00000080] text-center content-center">
-                <h3 className="text-3xl md:text-[54px] text-[white] font-semibold jamjuree">
-                  The Why
-                </h3>
-              </div>
-            </div>
-          </div>
-
+              <circle cx="12" cy="6" r="4" fill="#3f37a5" />
+              <path
+                fill="#3f37a5"
+                d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5"
+                opacity="0.5"
+              />
+            </svg>{" "}
+            <h3 className="">Total Clients</h3>
+          </div>{" "}
         </div>
-        <DescriptionSection translateY={translateY} setStartStickyScrolling={setStartStickyScrolling} />
-
+        <div className="">
+          <h3 className="text-xl font-bold text-center">553434</h3>
+          <div className="flex justify-center gap-2 items-center mt-3">
+           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 20 20"><g fill="#3f37a5"><path d="M6.5 2h6.685a1.5 1.5 0 0 1 1.106.486l4.314 4.702A1.5 1.5 0 0 1 19 8.202V18.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 5 18.5v-15A1.5 1.5 0 0 1 6.5 2" opacity="0.2"/><path d="M6.5 12a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zm0 3a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1z"/><path fill-rule="evenodd" d="M11.185 1H4.5A1.5 1.5 0 0 0 3 2.5v15A1.5 1.5 0 0 0 4.5 19h11a1.5 1.5 0 0 0 1.5-1.5V7.202a1.5 1.5 0 0 0-.395-1.014l-4.314-4.702A1.5 1.5 0 0 0 11.185 1M4 2.5a.5.5 0 0 1 .5-.5h6.685a.5.5 0 0 1 .369.162l4.314 4.702a.5.5 0 0 1 .132.338V17.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5z" clip-rule="evenodd"/><path d="M11 7h5.5a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 1 0z"/></g></svg>
+            <h3 className="">Total Works</h3>
+          </div>{" "}
+        </div>
       </div>
 
-    </>
+
+
+      <div className="w-[90%] h-52 jamjuree bg-[#3f37a5] text-white shadow-md mx-auto mt-10  rounded-bl-[70px] rounded-tl-xl rounded-r-[70px] p-5 text-left">
+      <h3 className="text-3xl mb-4 font-bold ">Our Why</h3>
+      <p>To transform challenges into digital possibilities — crafting innovative IT experiences that move businesses forward.</p>
+      </div>
+
+    </div>
   );
 }
