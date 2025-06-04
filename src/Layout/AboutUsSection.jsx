@@ -1,11 +1,12 @@
 export default function AboutUsSection() {
   return (
-    <div className="mt-10 jamjuree mb-24">
-      <h3 className="text-2xl font-semibold  text-center">About Us</h3>
+    <div className="mt-10 jamjuree mb-24 flex flex-col md:h-max  md:flex-row items-center">
+      <div className="md:w-full">
+        <h3 className="text-2xl md:text-4xl font-semibold jamjuree mb-10 text-center">About Us</h3>
       <p className="text-center mt-5 font-extralight w-[90%] justify-self-center">
         We build smart IT solutions that drive growth and innovation.
       </p>
-      <div className="mt-10 flex flex-col justify-center gap-8 mx-auto w-fit">
+      <div className="mt-10 flex flex-col md:flex-row justify-center gap-8 mx-auto w-fit ">
         <div className="">
           <h3 className="text-xl font-bold text-center">553434</h3>
           <div className="flex justify-center gap-2 items-center mt-3">
@@ -57,12 +58,12 @@ export default function AboutUsSection() {
           </div>{" "}
         </div>
       </div>
-
-
-
-      <div className="w-[90%] h-52 jamjuree bg-[#3f37a5] text-white shadow-md mx-auto mt-10  rounded-bl-[70px] rounded-tl-xl rounded-r-[70px] p-5 text-left">
+      </div>
+      <div className="w-full md:h-auto">
+      <div className="w-[90%] md:w-fit h-52 jamjuree bg-[#3f37a5] text-white shadow-md mx-auto mt-10  rounded-bl-[70px] rounded-tl-xl rounded-r-[70px] p-5 text-left">
       <h3 className="text-3xl mb-4 font-bold ">Our Why</h3>
-      <p>To transform challenges into digital possibilities — crafting innovative IT experiences that move businesses forward.</p>
+      <p>To transform challenges into digital possibilities,<br></br> crafting innovative IT experiences that move businesses forward.</p>
+      </div>
       </div>
 
     </div>

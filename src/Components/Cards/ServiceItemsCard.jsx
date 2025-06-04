@@ -1,40 +1,32 @@
 import { useState } from "react";
-import EnquiryModal from "../Components/Modals/EnquiryModal";
+import EnquiryModal from "../Modals/EnquiryModal";
 
-export default function SendEnquiry({ title, image }) {
-
-  const [isModalOpened, setIsModalOpened] = useState(false)
+export default function ServiceItemsCard({ img, title }) {
+    const [isModalOpened, setIsModalOpened] = useState(false)
   
-
-
   return (
-    <div
-      className="w-fit md:w-full px-3 h-fit md:mx-auto py-4 shrink-0 rounded-xl md:h-52 bg-[#f7f6f6] flex flex-col gap-10 md:justify-between relative"
-      style={{
-        backgroundImage: `url(${image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <div className="w-full h-full bg-gradient-to-b from-[black] to-[#ffffff00] absolute top-0 left-0 rounded-xl"></div>
-      <h3 className="text-white md:text-xl md:font-extralight z-10">{title}</h3>
-      <div>
-        <div className="flex gap-2 flex-col">
-          <a href={`https://wa.me/9656629064?text=I want to know about ${title},`} >
-            <button className="w-full flex  justify-center gap-2 rounded-lg bg-[white] items-center px-4 py-2 z-10">
-              <h3 className="text-xs text-[gray]">Send enquiry via </h3>
-              <img className="md:w-5 w-4 h-4 md:h-5" src="/assets/Images/logo/whatsapp-svgrepo-com.svg"></img>
-            </button>
-          </a>
-          <button onClick={() => {
-            setIsModalOpened(true)
-          }} className="w-full flex justify-center gap-2 rounded-lg bg-[white] items-center py-2 z-10">
-            <h3 className="text-xs text-[gray]">Send enquiry via </h3>
+    <>
+      <div className="flex border rounded-xl bg-[#ffffff] justify-between py-2 px-2 items-center gap-5">
 
+        <div className="flex gap-5 items-center">
+          <div className="h-10 w-10 p-1 bg-[#ffffff] shadow-md border rounded-md">
+            <img className="w-full h-full" src={`/assets/Images/Icons/${img}`}></img>
+          </div>
+          <h3 className="text-base font-semibold">{title}</h3>
+        </div>
+        <div className="flex gap-2 items-center">
+          <h3 className="text-sm ">Enquiry ?</h3>
+          <a href={`https://wa.me/9656629064?text=I want to know about ${title},`} >
+          <button className="p-2 border rounded-lg">
+            <img className="w-6 h-6" src="/assets/Images/logo/whatsapp-svgrepo-com.svg"></img>
+          </button>
+          </a>
+          <button onClick={()=>{
+            setIsModalOpened(true)
+          }} className="p-2 border rounded-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="md:w-5 w-4 h-4 md:h-5"
+              className="w-6 h-6"
               viewBox="0 0 512 512"
             >
               <path
@@ -68,14 +60,14 @@ export default function SendEnquiry({ title, image }) {
                 stroke="#dce2e2"
               />
             </svg>
-          </button>
+            </button>
         </div>
+        {isModalOpened ?
+                <EnquiryModal setIsModalOpened={setIsModalOpened} title={title} />
+                :
+                null
+              }
       </div>
-      {isModalOpened ?
-        <EnquiryModal setIsModalOpened={setIsModalOpened} title={title} />
-        :
-        null
-      }
-    </div>
-  );
+    </>
+  )
 }

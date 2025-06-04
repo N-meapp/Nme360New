@@ -6,9 +6,11 @@ export default function FeaturesSection() {
 
   return (
     <>
-      <div className="w-[90%] md:w-[80%] md:flex h-fit mb-12 mt-20 mx-auto rounded-lg bg-[#ffffff] p-5 border">
+    <div className="w-[90%] md:w-[80%] h-fit mb-12 mt-20 mx-auto" >
+        <h3 className="text-2xl md:text-4xl font-semibold jamjuree mb-10">Features</h3>
+      <div className="w-full md:flex h-fit  mx-auto rounded-lg bg-[#ffffff] p-5 border">
         <div className="w-full md:w-1/3 overflow-x-auto scrollbar-hide">
-          <div className="flex md:flex-col text-wrap md:p-6 rounded-lg md:h-full md:w-fit md:bg-[#f7f6f6] gap-10 whitespace-nowrap scrollbar-hide text-xs">
+          <div className="flex md:flex-col md:text-wrap md:p-6 rounded-lg md:h-full md:w-fit md:bg-[#f7f6f6] gap-10 whitespace-nowrap scrollbar-hide text-xs">
             <div className="w-fit h-fit">
               <h3
                 className="md:text-lg"
@@ -91,7 +93,7 @@ export default function FeaturesSection() {
           />
         ) : selectedTab == "two" ? (
           <EachFeatures
-            image={"/assets/Images/About/custombuild.png"}
+            image={"/assets/Images/About/custombuild.jpg"}
             title={"Custom-Built for Your Brand"}
             description={
               "We don’t use generic templates. Every project is tailored to your business goals, ensuring your website, app, or marketing campaign reflects your unique identity and audience."
@@ -99,7 +101,7 @@ export default function FeaturesSection() {
           />
         ) : selectedTab == "three" ? (
           <EachFeatures
-            image={"/assets/Images/About/team3.png"}
+            image={"/assets/Images/About/team3.jpg"}
             title={"Dedicated Support Team"}
             description={
               "We don’t disappear after launch. Get 24/7 technical support, bug fixes, and continuous improvements from a team that’s committed to your long-term success."
@@ -107,7 +109,7 @@ export default function FeaturesSection() {
           />
         ) : selectedTab == "four" ? (
           <EachFeatures
-            image={"/assets/Images/About/ux.png"}
+            image={"/assets/Images/About/ux.jpg"}
             title={"Seamless User Experience"}
             description={
               "Design meets function in everything we build. We focus on clean interfaces, fast loading, and easy navigation to keep users engaged and coming back."
@@ -115,7 +117,7 @@ export default function FeaturesSection() {
           />
         ) : selectedTab == "five" ? (
           <EachFeatures
-            image={"/assets/Images/About/security.png"}
+            image={"/assets/Images/About/security.jpg"}
             title={"Data-Secure Platforms"}
             description={
               "Security is never optional. We implement secure hosting, encrypted payments, and user data protection to give you and your customers complete peace of mind."
@@ -123,6 +125,7 @@ export default function FeaturesSection() {
           />
         ) : null}
       </div>
+    </div>
     </>
   );
 }

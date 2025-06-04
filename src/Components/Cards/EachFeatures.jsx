@@ -6,7 +6,7 @@ export default function EachFeatures({title,description,image}){
     <h3 className="text-2xl jamjuree font-semibold">
     {title}
     </h3>
-    <p className="text-xs md:text-base md:leading-loose mt-3 text-center">
+    <p className="text-xs jamjuree md:text-base md:leading-loose mt-3 md:text-center">
     {description}
     </p>
   </div>

@@ -20,6 +20,7 @@ export default function ApplyForJob() {
   formData.append('number', number);
   formData.append('description', description);
   formData.append('position', position);
+  formData.append('status', 'jobs');
   formData.append('resume', resume); // resume should be a File object
 
   try {

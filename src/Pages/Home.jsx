@@ -26,93 +26,76 @@ export default function Home() {
   const [isPointLeft, setIsPointLeft] = useState(true);
   const [leftTranslateX, setleftTranslateX] = useState(0);
   const [rightTranslateX, setRightTranslateX] = useState(0);
-  const [isStartScrolling,setIsStartScrolling] = useState(false);
-  const [startStickyScrolling,setStartStickyScrolling] = useState(false)
-   const [projectsScrollHeight,setProjectsScrollHeight] = useState(0)
-   const [descriptionScrollHeight,setDescriptionScrollHeight] = useState(0)
-   const [backendScrollHeight,setBackendScrollHeight] = useState(0)
-   const [backendTopRect,setBackendTopRect] = useState(0)
-   const [thridDescriptionScrollHeight,setThridDescriptionScrollHeight] = useState(0)
-   const [connectWithScrollHeight,setConnectWithScrollHeight] = useState(0)
+  const [isStartScrolling, setIsStartScrolling] = useState(false);
+  const [startStickyScrolling, setStartStickyScrolling] = useState(false)
+  const [projectsScrollHeight, setProjectsScrollHeight] = useState(0)
+  const [descriptionScrollHeight, setDescriptionScrollHeight] = useState(0)
+  const [backendScrollHeight, setBackendScrollHeight] = useState(0)
+  const [backendTopRect, setBackendTopRect] = useState(0)
+  const [thridDescriptionScrollHeight, setThridDescriptionScrollHeight] = useState(0)
+  const [connectWithScrollHeight, setConnectWithScrollHeight] = useState(0)
 
 
 
-    useEffect(()=>{
-           window.scrollTo({ top: 0});
-   
-       },[])
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+
+  }, [])
 
 
   return (
-    // <>
 
-
-      
-        // <LandingSection />
-    //    <TextSection />
-    //     <AboutUsSectionAlternative
-    //       setIsPointLeft={setIsPointLeft}
-    //       isPointLeft={isPointLeft}
-    //       leftTranslateX={leftTranslateX}
-    //       setleftTranslateX={setleftTranslateX}
-    //       rightTranslateX={rightTranslateX}
-    //       setRightTranslateX={setRightTranslateX}
-    //     />
-    //      <AboutUsSection
-    //     setIsPointLeft={setIsPointLeft}
-    //     isPointLeft={isPointLeft}
-    //     leftTranslateX={leftTranslateX}
-    //     rightTranslateX={rightTranslateX}
-    //     isStartScrolling={isStartScrolling}
-    //     setStartStickyScrolling={setStartStickyScrolling}
-    //   />
-    //     <DescriptionSectionAlternative setIsStartScrolling={setIsStartScrolling} />
-    //     <FutureProjects startStickyScrolling={startStickyScrolling} projectsScrollHeight={projectsScrollHeight} descriptionScrollHeight={descriptionScrollHeight} setDescriptionScrollHeight={setDescriptionScrollHeight} backendScrollHeight={backendScrollHeight} backendTopRect={backendTopRect} thridDescriptionScrollHeight={thridDescriptionScrollHeight} />
-    //     <FutureProjectsAlternative projectsScrollHeight={projectsScrollHeight} setProjectsScrollHeight={setProjectsScrollHeight} /> 
-    //     <DescriptionSectionTwoAtlernative setDescriptionScrollHeight={setDescriptionScrollHeight} />  
-    //     <BackendWorksAlternative setBackendScrollHeight={setBackendScrollHeight} backendScrollHeight={backendScrollHeight} backendTopRect={backendTopRect} setBackendTopRect={setBackendTopRect} />
-    //     <DescriptionSectionThreeAlternative setDescriptionScrollHeight={setThridDescriptionScrollHeight} />
-    //     <div className="bg-[white] w-full h-fit">
-    //     <DescriptionSectionThree connectWithScrollHeight={connectWithScrollHeight} setConnectWithScrollHeight={setConnectWithScrollHeight} />
-    //     <ConnectWithUsSectionAlternative setConnectWithScrollHeight={setConnectWithScrollHeight} />
-    //     </div>
-        
-
-    //   {/* </Scroll> */}
-    // </>
     <div className="">
 
-    <div className="w-full h-screen relative">
-    <div className="h-fit w-full pl-8 pt-52">
-      <h3 className="poppins md:text-7xl text-5xl font-semibold">Your future <br></br> coded</h3>
-      <h3 className="md:text-2xl text-xl font-semibold jamjuree mt-2">Revolutionizing
-      IT for a
-      <br />
-      Connected
-      <br />
-      World.</h3>
-      <div className="w-full h-fit">
-      <div className="p-3 bg-[#3f37a5] rounded-lg mt-5 text-[white] absolute z-10 text-xs md:text-base cursor-pointer">Explore</div>
-      <img className="w-full md:w-1/2 md:absolute -z-40 md:top-0 md:right-0 md:rotate-180" src="/assets/Images/header/connection.jpg">
-      </img>
+      <div className="w-full h-screen relative">
+        <div className="h-fit w-full md:pl-20 pl-8 pt-52">
+          <h3 className="poppins md:text-7xl text-5xl font-semibold">Your future <br></br> coded</h3>
+          <h3 className="md:text-2xl text-xl font-semibold jamjuree mt-2">Revolutionizing
+            IT for a
+            <br />
+            Connected
+            <br />
+            World.</h3>
+          <div className="w-full h-fit">
+            <div className="p-3 bg-[#3f37a5] rounded-lg mt-5 text-[white] absolute z-10 text-xs md:text-base cursor-pointer">Explore</div>
+            <img className="w-full md:w-1/2 md:absolute -z-40 md:top-0 md:right-0 md:rotate-180" src="/assets/Images/header/connection.jpg">
+            </img>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
-    <div>
-    <InfiniteCarosel />
-    </div>
+      <div className="md:hidden block">
+        <InfiniteCarosel />
+      </div>
+      <div className="md:block hidden">
+        <div className="w-[80%] h-fit bg-[#f8f8f8] jamjuree mt-28 mx-auto py-10 px-4 text-black text-center rounded-lg">
+          <div className="flex w-fit mx-auto">
+            <span>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" className="-rotate-12 -mr-" viewBox="0 0 24 24"><path fill="#3f37a5" d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91c4.59-1.15 8-5.86 8-10.91V5zm-1.06 13.54L7.4 12l1.41-1.41l2.12 2.12l4.24-4.24l1.41 1.41z"/></svg>            </span>
+            <h3 className="text-4xl font-semibold relative flex">Our trusted clients
+            </h3>
 
-    <FeaturesSection />
+          </div>
+          <p className="mt-6 mb-14">llar of trust and collaboration — where integrity meets lasting partnership.</p>
+          <InfiniteCarosel />
 
-    <ServiceSection />
+          <div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <FeaturesSection />
+
+      <ServiceSection />
 
 
-    <WhyChooseUs />
+      <WhyChooseUs />
 
-    <AboutUsSection />
+      <AboutUsSection />
 
 
-    <Footer />
+      <Footer />
 
     </div>
 

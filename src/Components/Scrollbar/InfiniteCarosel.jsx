@@ -14,7 +14,7 @@ const InfiniteCarosel = () => {
   return (
     <div className="w-full overflow-hidden">
       <div
-        className="flex animate-scroll whitespace-nowrap mt-5 items-center gap-12"
+        className="flex animate-scroll whitespace-nowrap mt-5 items-center md:gap-28 gap-12"
         style={{ animationDuration: "10s" }}
       >
         {[...images, ...images, ...images, ...images].map((src, index) => (
