@@ -15,39 +15,115 @@ export default function ContactUsSection() {
     const handleSubmit = async () => {
         setIsSubmitted(false)
 
-        const data = {
-            name: `${firstName}  ${lastName}`,
-            email: email,
-            number: number,
-            subject: subject,
-            message: message
+        const alertArray = document.getElementsByClassName('alert')
+        console.log(alertArray[0].innerText,'alerrtt');
+
+        let isValid = true
+
+        for (let i = 0; i < alertArray.length; i++) {
+            if (alertArray[i].innerText) {
+                console.log('false');
+                isValid = false
+            }else{
+                console.log('true');
+                
+            }
         }
-        console.log(data, 'dattaa');
+
+        if (firstName && lastName && email && number && subject && message && isValid) {
+
+            console.log('aaahhhhaai');
+            
+            const data = {
+                name: `${firstName}  ${lastName}`,
+                email: email,
+                number: number,
+                subject: subject,
+                message: message
+            }
+            console.log(data, 'dattaa');
 
 
-        try {
-            const response = await axios.post('https://nme360.com/api/enquiry', data);
+            try {
+                const response = await axios.post('http://localhost:3000/api/enquiry', data);
 
-            console.log(response);
+                console.log(response);
 
-            if (response.data) {
-                setIsSubmitted(false)
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Applied Successfully!",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+                if (response.data) {
+                    setIsSubmitted(false)
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Applied Successfully!",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
 
+                }
+
+            } catch (error) {
+                console.error(error);
             }
 
-        } catch (error) {
-            console.error(error);
         }
 
 
     }
+
+
+    const validateData = (type,name) => {
+        if (type == 'name') {
+            if (!name) {
+                return 'Required *'
+            } else if (!/^[A-Za-z\s]+$/.test(name)) {
+                return 'The name entered is invalid.'
+            } else {
+                
+                return ''
+            }
+        } else if (type == 'email') {
+            if (!email) {
+                return 'Required *'
+            } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+                console.log(email, 'full nameee');
+                
+                return 'The e-mail address entered is invalid.'
+            } else {
+
+                
+                return ''
+            }
+
+        } else if (type == 'phone') {
+            if (!number) {
+                return 'Required *'
+            } else if (!/^(?:\+?\d{1,3}[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/.test(number)) {
+                console.log(number, 'full nameee');
+                
+                return 'The phone number entered is invalid.'
+            } else {
+
+                
+                return ''
+            }
+
+        } else if (type == 'position') {
+
+            if (!position) {
+                return 'Required *'
+            } else if (!/^[A-Za-z0-9-]+$/.test(position)) {
+                console.log(position, 'full nameee');
+                
+                return 'The position entered in invalid.'
+            } else {
+
+                
+                return ''
+            }
+
+        }
+    }
+
 
 
     return (
@@ -66,6 +142,7 @@ export default function ContactUsSection() {
                             }}
                             value={firstName}
                         ></input>
+                        <span className=" text-[12px] text-[red] alert">{validateData('name',firstName)}</span>
                     </div>
                     <div class="w-full md:w-1/2 px-2">
                         <label class="block text-[#8D8D8D] text-[12px]">
@@ -79,6 +156,9 @@ export default function ContactUsSection() {
                             }}
                             value={lastName}
                         ></input>
+                        <span className=" text-[12px] text-[red] alert">{validateData('name',lastName)}</span>
+
+                        
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-2 mb-4">
@@ -93,6 +173,7 @@ export default function ContactUsSection() {
                             }}
                             value={email}
                         ></input>
+                         <span className=" text-[12px] text-[red] alert">{validateData('email')}</span>
                     </div>
                     <div class="w-full md:w-1/2 px-2">
                         <label class="block text-[#8D8D8D] text-[12px]">
@@ -106,6 +187,7 @@ export default function ContactUsSection() {
                             }}
                             value={number}
                         ></input>
+                         <span className=" text-[12px] text-[red] alert">{validateData('phone')}</span>
                     </div>
                 </div>
                 <div class="mb-4">
@@ -183,26 +265,26 @@ export default function ContactUsSection() {
 
                     {isSubmitted ?
                         <button
-                        onClick={() => {
-                        handleSubmit()
-                    }}
-                    class="bg-black text-white px-4 h-[50px] w-[205px] mt-8 rounded-[4px] flex gap-2 items-center justify-center"
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="2 4" stroke-dashoffset="6" d="M12 21c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9"><animate attributeName="stroke-dashoffset" dur="0.6s" repeatCount="indefinite" values="6;0"/></path><path stroke-dasharray="32" stroke-dashoffset="32" d="M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.1s" dur="0.4s" values="32;0"/></path><path stroke-dasharray="10" stroke-dashoffset="10" d="M12 16v-7.5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="10;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 8.5l3.5 3.5M12 8.5l-3.5 3.5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.2s" values="6;0"/></path></g></svg>
-                Sending
-                </button>:
-                <button
-                    onClick={() => {
-                        handleSubmit()
-                    }}
-                    class="bg-black text-white px-4 h-[50px] w-[205px] mt-8 rounded-[4px] items-center"
-                >
-                    Send Message
-                </button>
+                            onClick={() => {
+                                handleSubmit()
+                            }}
+                            class="bg-black text-white px-4 h-[50px] w-[205px] mt-8 rounded-[4px] flex gap-2 items-center justify-center"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="2 4" stroke-dashoffset="6" d="M12 21c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9"><animate attributeName="stroke-dashoffset" dur="0.6s" repeatCount="indefinite" values="6;0" /></path><path stroke-dasharray="32" stroke-dashoffset="32" d="M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.1s" dur="0.4s" values="32;0" /></path><path stroke-dasharray="10" stroke-dashoffset="10" d="M12 16v-7.5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="10;0" /></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 8.5l3.5 3.5M12 8.5l-3.5 3.5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.2s" values="6;0" /></path></g></svg>
+                            Sending
+                        </button> :
+                        <button
+                            onClick={() => {
+                                handleSubmit()
+                            }}
+                            class="bg-black text-white px-4 h-[50px] w-[205px] mt-8 rounded-[4px] items-center"
+                        >
+                            Send Message
+                        </button>
 
-}
-            </h1>
-        </div >
+                    }
+                </h1>
+            </div >
         </>
     )
 }
