@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ScrollContext } from "../main";
 import FeaturesCard from "../Components/Cards/FeaturesCard";
 import AboutFeaturesSection from "../Layout/AboutFeaturesSection";
+import Footer from "../Layout/Footer";
 
 export default function AboutUs() {
 
@@ -86,6 +87,7 @@ export default function AboutUs() {
 
 
 
+      <Footer />
 
 
         </>

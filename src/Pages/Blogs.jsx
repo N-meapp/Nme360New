@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ScrollContext } from "../main";
 import BlogCard from "../Components/Cards/BlogCard";
 import axios from "axios";
+import Footer from "../Layout/Footer";
 
 export default function Blogs() {
 
@@ -72,6 +73,7 @@ export default function Blogs() {
 </div>
 
       </div>
+      <Footer />
     </>
   );
 }

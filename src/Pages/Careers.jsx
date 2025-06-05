@@ -3,6 +3,7 @@ import { ScrollContext } from "../main";
 import axios from "axios";
 import CareersCard from "../Components/Cards/CareersCard";
 import ApplyForJob from "../Layout/Admin/ApplyForJob";
+import Footer from "../Layout/Footer";
 
 export default function Careers() {
 
@@ -157,7 +158,7 @@ export default function Careers() {
                <ApplyForJob />
 
             </div>
-
+        <Footer />
         </>
     )
 }

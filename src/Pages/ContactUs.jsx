@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ScrollContext } from "../main";
 import ContactUsSection from "../Layout/Admin/ContactUsSection";
+import Footer from "../Layout/Footer";
 
 export default function ContactUs() {
 
@@ -62,6 +63,7 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
